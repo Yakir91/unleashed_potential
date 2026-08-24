@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#22c55e">
+  <!-- Main pad -->
+  <ellipse cx="50" cy="65" rx="18" ry="22" />
+  
+  <!-- Top left toe -->
+  <ellipse cx="28" cy="35" rx="10" ry="14" transform="rotate(-15 28 35)" />
+  
+  <!-- Top middle-left toe -->
+  <ellipse cx="40" cy="25" rx="10" ry="14" transform="rotate(-5 40 25)" />
+  
+  <!-- Top middle-right toe -->
+  <ellipse cx="60" cy="25" rx="10" ry="14" transform="rotate(5 60 25)" />
+  
+  <!-- Top right toe -->
+  <ellipse cx="72" cy="35" rx="10" ry="14" transform="rotate(15 72 35)" />
+</svg>
+

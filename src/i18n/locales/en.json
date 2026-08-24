@@ -1,0 +1,415 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookSession": "Book a Session"
+  },
+  "home": {
+    "hero": {
+      "badge": "Professional Dog Training",
+      "title": "Professional Dog Training &",
+      "titleHighlight": " IGP Sport Excellence",
+      "subtitle": "Hi, I'm {{name}}! With over 10 years of experience as a classical dog trainer and 8 years specializing in IGP sport training, I help dogs reach their full potential through proven, structured training methods.",
+      "bookConsultation": "Book a Free Consultation",
+      "exploreServices": "Explore Services",
+      "certified": "Certified Trainer",
+      "insured": "Insured & Bonded",
+      "reviewsLabel": "500+ Reviews",
+      "imageAlt": "Yakir Lavi - 2nd Place Israel National Championship"
+    },
+    "stats": {
+      "dogsTrained": "Dogs Trained",
+      "yearsExperience": "Years Experience",
+      "yearsIGP": "Years IGP Training",
+      "israelNational": "Israel National 2023"
+    },
+    "video": {
+      "title": "Watch Our Training in Action",
+      "subtitle": "See the amazing transformations we achieve together",
+      "placeholderTitle": "Your Training Video Here",
+      "placeholderText": "Add an engaging video showing your training methods and happy dogs!",
+      "iframeTitle": "Dog training videos from Yakir Lavi",
+      "watchOnYoutube": "Watch More on YouTube"
+    },
+    "whyChoose": {
+      "title": "Why Choose Unleashed Potential?",
+      "subtitle": "Every dog has potential waiting to be unlocked. Through classical training methods, clear communication, and structured discipline, I help dogs develop confidence, focus, and reliable obedience.",
+      "learnMore": "Learn More About Me",
+      "imageAlt": "Happy training dog",
+      "benefits": {
+        "1": "Classical training methods with proven results",
+        "2": "IGP sport training and competition preparation",
+        "3": "Obedience, tracking, and protection training",
+        "4": "Individual and group sessions available",
+        "5": "National and international competition experience",
+        "6": "Structured programs for working dogs and sport dogs"
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Dog's Training Journey?",
+      "subtitle": "Let's work together to bring out the best in your furry friend. Book your free consultation today!",
+      "button": "Book Your Free Consultation"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About",
+      "titleHighlight": "Me",
+      "subtitle": "Passionate dog trainer, animal lover, and your partner in creating the perfect bond with your furry friend"
+    },
+    "story": {
+      "badge": "My Journey",
+      "title": "A Lifelong Love for Dogs",
+      "paragraph1": "Hi! I'm <strong>Yakir Lavi</strong>, and my passion for dog training began over a decade ago. What started as an interest in basic obedience quickly evolved into a deep commitment to classical training methods and the competitive world of IGP (Internationale Gebrauchshunde Prüfung) dog sport.",
+      "paragraph2": "For the past <strong>8 years</strong>, I've dedicated myself to mastering IGP training - a demanding sport that tests a dog's tracking abilities, obedience precision, and protection work. This journey has taken me to the highest levels of competition, including the <strong>IGP World Championship in 2023</strong>.",
+      "paragraph3": "My competitive achievements include <strong>2nd place at the Israel National Championship in 2023</strong>, followed by 4th place in 2024 and 5th place in 2025. These competitions aren't just about winning - they're about demonstrating the incredible results that come from structured, classical training methods.",
+      "paragraph4": "Over <strong>10 years</strong> of experience, I've trained more than <strong>500 dogs</strong> - from family companions needing reliable obedience to working dogs preparing for competitions. I believe in clear communication, consistent structure, and helping every dog reach its full potential through proven training techniques.",
+      "quote": "My mission is to unlock every dog's potential through classical training methods. Whether you want a reliable family companion or a competitive sport dog, I provide the structure, discipline, and expertise to achieve real results.",
+      "quoteAuthor": "- Yakir Lavi"
+    },
+    "certifications": {
+      "title": "Competition Achievements",
+      "subtitle": "Proven results at the highest levels of IGP competition",
+      "items": [
+        { "title": "2nd Place Israel National Championship" },
+        { "title": "4th Place Israel National Championship" },
+        { "title": "5th Place Israel National Championship" },
+        { "title": "IGP World Championship Participant" }
+      ]
+    },
+    "philosophy": {
+      "title": "My Training Philosophy",
+      "subtitle": "The principles that guide every training session",
+      "points": [
+        {
+          "title": "Classical Training",
+          "description": "Time-tested training methods that establish clear boundaries, reliable obedience, and strong working relationships between handler and dog."
+        },
+        {
+          "title": "Structure & Discipline",
+          "description": "Dogs thrive with clear rules and consistent expectations. Through structured training, dogs develop confidence, focus, and dependable behavior."
+        },
+        {
+          "title": "IGP Sport Excellence",
+          "description": "Specializing in tracking, obedience, and protection work. Competition-level training that brings out the best in working dogs and sport dogs."
+        }
+      ]
+    },
+    "approach": {
+      "title": "What Makes My Approach Different?",
+      "points": [
+        "<strong>Classical Training Foundation:</strong> Time-tested methods that create reliable, confident dogs with clear boundaries and expectations.",
+        "<strong>IGP Sport Expertise:</strong> Specialized training in tracking, obedience, and protection work for sport dogs and working dogs.",
+        "<strong>Competition Experience:</strong> Proven success at national and international levels - I know what it takes to compete and win.",
+        "<strong>Handler Training:</strong> I teach you to become an effective handler - clear communication and proper technique are essential.",
+        "<strong>Results-Oriented:</strong> Whether for family life or competition, I focus on measurable progress and reliable performance.",
+        "<strong>Structured Programs:</strong> Progressive training plans that build skills systematically, from foundation to advanced work."
+      ]
+    },
+    "video": {
+      "title": "See Me in Action",
+      "subtitle": "Watch real training sessions and transformations",
+      "placeholder": "Training Video",
+      "placeholderText": "Add your training video here"
+    },
+    "cta": {
+      "title": "Let's Work Together!",
+      "subtitle": "Ready to start your dog's training journey? I'd love to meet you and your furry friend!",
+      "button": "Schedule a Consultation"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Training",
+      "titleHighlight": " Services",
+      "subtitle": "Comprehensive dog training programs designed to meet your specific needs and goals"
+    },
+    "items": {
+      "igp": {
+        "title": "IGP Sport Training",
+        "subtitle": "Competition preparation",
+        "description": "Complete IGP training program covering tracking, obedience, and protection work for sport dogs.",
+        "details": "Comprehensive IGP training for handlers and dogs preparing for competition. Learn from a trainer with proven success at national and international levels, including 2nd place Israel National Championship.",
+        "features": {
+          "1": "Tracking (Phase A)",
+          "2": "Obedience (Phase B)",
+          "3": "Protection (Phase C)",
+          "4": "Competition preparation",
+          "5": "Handler training",
+          "6": "Trial readiness assessment"
+        }
+      },
+      "obedience": {
+        "title": "Classical Obedience",
+        "subtitle": "All ages",
+        "description": "Structured obedience training using classical methods for reliable, consistent results.",
+        "details": "Classical training approach that establishes clear boundaries and reliable obedience. Ideal for family dogs who need structure or dogs preparing for advanced work.",
+        "features": {
+          "1": "Core commands (sit, down, stay, come)",
+          "2": "Precise heel work",
+          "3": "Distance control",
+          "4": "Impulse control",
+          "5": "Off-leash reliability",
+          "6": "Handler communication skills"
+        }
+      },
+      "foundation": {
+        "title": "Working Dog Foundation",
+        "subtitle": "Young & sport prospects",
+        "description": "Foundation training for young dogs destined for sport or working roles.",
+        "details": "Specialized program for puppies and young dogs showing potential for IGP or working roles. Build the foundation for future competition success.",
+        "features": {
+          "1": "Drive development",
+          "2": "Basic obedience foundation",
+          "3": "Prey and play building",
+          "4": "Environmental confidence",
+          "5": "Temperament assessment",
+          "6": "Sport aptitude evaluation"
+        }
+      },
+      "behavior": {
+        "title": "Behavior Modification",
+        "subtitle": "Problem behaviors",
+        "description": "Address behavioral challenges with structured training and clear boundaries.",
+        "details": "Specialized program for dogs with behavioral issues. Using classical training methods to establish structure, clear rules, and reliable behavior patterns.",
+        "features": {
+          "1": "Aggression management",
+          "2": "Anxiety reduction",
+          "3": "Reactivity training",
+          "4": "Impulse control issues",
+          "5": "Boundary establishment",
+          "6": "Structured rehabilitation"
+        }
+      },
+      "tracking": {
+        "title": "Advanced Tracking",
+        "subtitle": "IGP tracking specialists",
+        "description": "Focused tracking training for IGP trials and competitive tracking work.",
+        "details": "Specialized tracking program for handlers preparing for IGP trials. Learn from competition experience and proven tracking methods.",
+        "features": {
+          "1": "Track laying techniques",
+          "2": "Article indication",
+          "3": "Variable surfaces",
+          "4": "Aging tracks",
+          "5": "Competition tracking",
+          "6": "Handler reading skills"
+        }
+      },
+      "private": {
+        "title": "Private Training Sessions",
+        "subtitle": "Personalized programs",
+        "description": "One-on-one training tailored to your specific goals, whether sport or companion.",
+        "details": "Individualized training sessions designed around your goals. Perfect for handlers needing specific guidance or dogs requiring focused attention.",
+        "features": {
+          "1": "Customized training plans",
+          "2": "Flexible scheduling",
+          "3": "Sport or obedience focus",
+          "4": "Handler coaching",
+          "5": "Problem-solving sessions",
+          "6": "Competition consultation"
+        }
+      }
+    },
+    "learnMore": "Learn More",
+    "showLess": "Show Less",
+    "whatsIncluded": "What's Included:",
+    "bookService": "Book This Service",
+    "process": {
+      "title": "How It Works",
+      "subtitle": "Simple steps to transform your dog",
+      "steps": {
+        "1": { "title": "Free Consultation", "description": "We discuss your goals and assess your dog's needs" },
+        "2": { "title": "Custom Plan", "description": "I create a personalized training program" },
+        "3": { "title": "Training Sessions", "description": "Regular sessions with homework and practice" },
+        "4": { "title": "Ongoing Support", "description": "Lifetime guidance and follow-up" }
+      }
+    },
+    "cta": {
+      "title": "Not Sure Which Service Is Right?",
+      "subtitle": "Book a free consultation and we'll find the perfect program for your dog!",
+      "button": "Schedule Free Consultation"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in",
+      "titleHighlight": " Touch",
+      "subtitle": "Ready to start training? Have questions? Let's talk! I'm here to help you and your dog succeed."
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "location": "Location",
+      "hours": "Hours",
+      "hoursText": "Sunday - Thursday: 6pm - 10pm\nFriday: 1pm - 4pm\nSaturday: Closed"
+    },
+    "form": {
+      "title": "Book a Free Consultation",
+      "subtitle": "Fill out the form below and I'll get back to you within 24 hours to schedule your free consultation!",
+      "yourInfo": "Your Information",
+      "aboutDog": "About Your Dog",
+      "trainingDetails": "Training Details",
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "dogName": "Dog's Name",
+      "age": "Age",
+      "breed": "Breed",
+      "trainingType": "Type of Training",
+      "selectService": "Select a service...",
+      "serviceOptions": {
+        "puppy": "Puppy Foundation",
+        "obedience": "Basic Obedience",
+        "behavior": "Behavior Modification",
+        "advanced": "Advanced Training & Agility",
+        "group": "Group Classes",
+        "private": "Private Sessions",
+        "other": "Not Sure / Other"
+      },
+      "preferredDate": "Preferred Date",
+      "preferredTime": "Preferred Time",
+      "selectTime": "Select a time...",
+      "morning": "Morning (8am-12pm)",
+      "afternoon": "Afternoon (12pm-4pm)",
+      "evening": "Evening (4pm-6pm)",
+      "flexible": "Flexible",
+      "additionalInfo": "Additional Information",
+      "additionalPlaceholder": "Tell me about your dog's personality, any specific concerns, or training goals...",
+      "submit": "Send Message",
+      "required": "* Required fields. We respect your privacy and will never share your information.",
+      "thankYou": "Thank You!",
+      "thankYouMessage": "Your message has been sent successfully. I'll be in touch soon!"
+    },
+    "whyContact": {
+      "title": "Why Work With Me?",
+      "items": {
+        "1": { "title": "Expert Training", "text": "10+ years of professional experience" },
+        "2": { "title": "Personalized Approach", "text": "Every dog gets a custom training plan" },
+        "3": { "title": "Proven Results", "text": "500+ happy clients and dogs" },
+        "4": { "title": "Lifetime Support", "text": "Ongoing guidance even after training" },
+        "5": { "title": "Flexible Locations", "text": "Home visits and outdoor sessions" },
+        "6": { "title": "Satisfaction Guaranteed", "text": "Your success is my priority" }
+      }
+    },
+    "connect": {
+      "title": "Connect With Us",
+      "subtitle": "Follow us on social media for training tips, success stories, and adorable dog photos!"
+    },
+    "serviceArea": {
+      "title": "Service Area",
+      "subtitle": "Serving Herzliya and surrounding areas within 50 km",
+      "mapPlaceholder": "Google Maps Integration",
+      "mapInstructions": "Add your Google Maps embed code here to show your service area"
+    },
+    "faq": {
+      "title": "Quick Questions?",
+      "subtitle": "Here are answers to common questions",
+      "items": {
+        "1": {
+          "q": "How long does training take?",
+          "a": "It depends on your goals and your dog, but most programs range from 6-12 weeks with weekly sessions."
+        },
+        "2": {
+          "q": "Do you offer in-home training?",
+          "a": "Yes! I offer both in-home private sessions and outdoor training in various locations."
+        },
+        "3": {
+          "q": "What training methods do you use?",
+          "a": "I use classical training methods that are proven, effective, and create confident dogs with reliable obedience."
+        },
+        "4": {
+          "q": "Can you help with aggressive dogs?",
+          "a": "Yes, I have extensive experience with behavior modification including aggression, anxiety, and fear-based behaviors."
+        }
+      }
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Training",
+      "titleHighlight": " Gallery",
+      "subtitle": "Explore photos and videos from our training sessions, success stories, and happy dogs!"
+    },
+    "filters": {
+      "all": "All Photos",
+      "training": "Training Sessions",
+      "beforeAfter": "Before & After",
+      "outdoor": "Outdoor Sessions",
+      "puppies": "Puppies"
+    },
+    "showing": "Showing",
+    "photo": "photo",
+    "photos": "photos",
+    "items": {
+      "1": {
+        "title": "Basic Obedience Training",
+        "description": "Max learning to sit and stay in the park"
+      },
+      "2": {
+        "title": "Puppy Socialization",
+        "description": "Group puppy training class"
+      },
+      "3": {
+        "title": "Amazing Transformation",
+        "description": "Luna before and after behavior training"
+      },
+      "4": {
+        "title": "Leash Training",
+        "description": "Perfect heel position during walk"
+      },
+      "5": {
+        "title": "Happy Puppy",
+        "description": "Celebrating graduation day"
+      },
+      "6": {
+        "title": "Behavioral Success",
+        "description": "Before and after anxiety training"
+      },
+      "7": {
+        "title": "Puppy Playtime",
+        "description": "Socialization through play"
+      },
+      "8": {
+        "title": "Group Class",
+        "description": "Outdoor group training session"
+      }
+    },
+    "clickToView": "Click to View",
+    "noPhotos": {
+      "title": "No photos found",
+      "subtitle": "Try selecting a different filter"
+    },
+    "upload": {
+      "title": "Add Your Photos!",
+      "subtitle": "Replace these placeholders with your amazing training photos and videos",
+      "sectionTitle": "Easy Photo Management",
+      "tips": {
+        "1": "✓ Upload high-quality photos from your training sessions",
+        "2": "✓ Add before/after comparisons to showcase transformations",
+        "3": "✓ Include action shots from agility training and outdoor sessions",
+        "4": "✓ Show happy puppies and satisfied clients",
+        "5": "✓ Feature different training environments and scenarios"
+      },
+      "proTip": "Pro Tip:",
+      "proTipText": "Use natural lighting and capture genuine moments of dogs learning and having fun!"
+    },
+    "cta": {
+      "title": "Want Your Dog Featured Here?",
+      "subtitle": "Join our training programs and become part of our success story gallery!",
+      "button": "Start Training Today"
+    }
+  },
+  "footer": {
+    "description": "Professional dog training using classical methods. IGP sport specialist with national and international competition experience.",
+    "quickLinks": "Quick Links",
+    "servicesTitle": "Services",
+    "contact": "Contact",
+    "location": "Herzliya, Israel",
+    "rights": "All rights reserved. Made with ❤️ for dogs."
+  }
+}
+
