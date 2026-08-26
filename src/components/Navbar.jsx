@@ -34,7 +34,7 @@ export default function Navbar() {
               <FaPaw className="text-3xl text-primary-500 group-hover:text-primary-600 transition-colors" />
             </motion.div>
             <span className="text-2xl font-bold text-gray-900 font-display">
-              Unleashed <span className="text-primary-500">Potential</span>
+              {t('brand')}
             </span>
           </Link>
 

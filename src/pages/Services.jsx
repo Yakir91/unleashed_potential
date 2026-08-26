@@ -21,8 +21,7 @@ export default function Services() {
         t('services.items.igp.features.2'),
         t('services.items.igp.features.3'),
         t('services.items.igp.features.4'),
-        t('services.items.igp.features.5'),
-        t('services.items.igp.features.6'),
+        t('services.items.igp.features.5')
       ],
       details: t('services.items.igp.details'),
     },
@@ -38,8 +37,7 @@ export default function Services() {
         t('services.items.obedience.features.2'),
         t('services.items.obedience.features.3'),
         t('services.items.obedience.features.4'),
-        t('services.items.obedience.features.5'),
-        t('services.items.obedience.features.6'),
+        t('services.items.obedience.features.5')
       ],
       details: t('services.items.obedience.details'),
     },
@@ -87,10 +85,7 @@ export default function Services() {
       features: [
         t('services.items.tracking.features.1'),
         t('services.items.tracking.features.2'),
-        t('services.items.tracking.features.3'),
-        t('services.items.tracking.features.4'),
-        t('services.items.tracking.features.5'),
-        t('services.items.tracking.features.6'),
+        t('services.items.tracking.features.3')
       ],
       details: t('services.items.tracking.details'),
     },

@@ -67,7 +67,7 @@ export default function Contact() {
     {
       icon: FaMapMarkerAlt,
       title: t('contact.info.location'),
-      content: 'Herzliya, Israel',
+      content: t('contact.info.locationValue'),
       link: '#map',
       color: 'from-accent-500 to-accent-600',
     },
@@ -203,7 +203,7 @@ export default function Contact() {
                             onChange={handleChange}
                             required
                             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
-                            placeholder="John Doe"
+                            placeholder={t('contact.form.placeholders.fullName')}
                           />
                         </div>
 
@@ -220,7 +220,7 @@ export default function Contact() {
                               onChange={handleChange}
                               required
                               className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
-                              placeholder="john@example.com"
+                              placeholder={t('contact.form.placeholders.email')}
                             />
                           </div>
 
@@ -236,7 +236,7 @@ export default function Contact() {
                               onChange={handleChange}
                               required
                               className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
-                              placeholder="(555) 123-4567"
+                              placeholder={t('contact.form.placeholders.phone')}
                             />
                           </div>
                         </div>
@@ -263,7 +263,7 @@ export default function Contact() {
                               onChange={handleChange}
                               required
                               className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
-                              placeholder="Max"
+                              placeholder={t('contact.form.placeholders.dogName')}
                             />
                           </div>
 
@@ -279,7 +279,7 @@ export default function Contact() {
                               onChange={handleChange}
                               required
                               className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
-                              placeholder="2 years"
+                              placeholder={t('contact.form.placeholders.age')}
                             />
                           </div>
 
@@ -295,7 +295,7 @@ export default function Contact() {
                               onChange={handleChange}
                               required
                               className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
-                              placeholder="Golden Retriever"
+                              placeholder={t('contact.form.placeholders.breed')}
                             />
                           </div>
                         </div>

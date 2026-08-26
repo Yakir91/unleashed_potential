@@ -71,10 +71,6 @@ export default function Home() {
                   <FaCheckCircle className="text-primary-500" />
                   <span>{t('home.hero.certified')}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <FaCheckCircle className="text-primary-500" />
-                  <span>{t('home.hero.insured')}</span>
-                </div>
               </div>
             </motion.div>
 

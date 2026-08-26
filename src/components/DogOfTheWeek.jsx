@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { FaPaw, FaStar, FaTrophy } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 export default function DogOfTheWeek() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-20 bg-gradient-to-br from-accent-50 to-primary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,10 +17,10 @@ export default function DogOfTheWeek() {
         >
           <div className="flex items-center justify-center space-x-2 mb-4">
             <FaTrophy className="text-accent-500 text-3xl" />
-            <h2 className="section-title mb-0">Dog of the Week</h2>
+            <h2 className="section-title mb-0">{t('dogOfTheWeek.title')}</h2>
             <FaTrophy className="text-accent-500 text-3xl" />
           </div>
-          <p className="section-subtitle">Celebrating our amazing success stories!</p>
+          <p className="section-subtitle">{t('dogOfTheWeek.subtitle')}</p>
         </motion.div>
 
         <motion.div
@@ -29,16 +32,14 @@ export default function DogOfTheWeek() {
         >
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              {/* Image Section */}
               <div className="relative bg-gradient-to-br from-primary-400 to-secondary-500 aspect-square flex items-center justify-center">
                 <div className="text-center text-white p-8">
                   <FaPaw className="text-8xl mb-4 mx-auto animate-bounce-slow" />
-                  <p className="text-xl font-semibold">Featured Dog Photo</p>
-                  <p className="text-white/80 mt-2">Add a photo of this week's star student!</p>
+                  <p className="text-xl font-semibold">{t('dogOfTheWeek.photoTitle')}</p>
+                  <p className="text-white/80 mt-2">{t('dogOfTheWeek.photoSubtitle')}</p>
                 </div>
               </div>
 
-              {/* Content Section */}
               <div className="p-8 flex flex-col justify-center">
                 <div className="flex items-center space-x-2 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -47,31 +48,31 @@ export default function DogOfTheWeek() {
                 </div>
                 
                 <h3 className="text-3xl font-bold text-gray-900 mb-2 font-display">
-                  Max the Golden Retriever
+                  {t('dogOfTheWeek.name')}
                 </h3>
                 
                 <p className="text-gray-600 mb-4">
-                  <strong>Achievement:</strong> Mastered Advanced Obedience
+                  <strong>{t('dogOfTheWeek.achievementLabel')}</strong> {t('dogOfTheWeek.achievement')}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Max came to us as an energetic puppy who loved to jump on everyone. After 8 weeks of dedicated training, he's now a well-behaved gentleman who responds to over 15 commands and has even started agility training!
+                  {t('dogOfTheWeek.story')}
                 </p>
 
                 <div className="bg-primary-50 rounded-xl p-4 border-l-4 border-primary-500">
                   <p className="text-gray-700 italic">
-                    "The transformation has been incredible! Max is now the perfect companion, and we couldn't be happier!" - Sarah, Max's Owner
+                    {t('dogOfTheWeek.quote')}
                   </p>
                 </div>
 
                 <div className="mt-6 flex items-center space-x-4 text-sm text-gray-600">
                   <div className="flex items-center space-x-1">
                     <FaPaw className="text-primary-500" />
-                    <span>8 Weeks of Training</span>
+                    <span>{t('dogOfTheWeek.weeks')}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     <FaTrophy className="text-accent-500" />
-                    <span>15+ Commands Mastered</span>
+                    <span>{t('dogOfTheWeek.commands')}</span>
                   </div>
                 </div>
               </div>
@@ -82,4 +83,3 @@ export default function DogOfTheWeek() {
     </section>
   )
 }
-

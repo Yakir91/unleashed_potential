@@ -12,8 +12,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: localStorage.getItem('language') || 'en', // Default language from localStorage or English
-    fallbackLng: 'en',
+    lng: localStorage.getItem('language') || 'he', // Default to Hebrew for primary audience
+    fallbackLng: 'he',
     interpolation: {
       escapeValue: false // React already escapes values
     }

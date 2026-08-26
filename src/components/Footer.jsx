@@ -14,36 +14,39 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <FaPaw className="text-2xl text-primary-500" />
               <span className="text-xl font-bold text-white font-display">
-                Unleashed Potential
+                {t('brand')}
               </span>
             </div>
             <p className="text-gray-400 mb-4">
               {t('footer.description')}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex items-center gap-5">
               <a
                 href="https://facebook.com/YakirDogTrainer"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-500 transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-400 hover:text-primary-500 hover:bg-gray-700 transition-colors"
+                aria-label="Facebook"
               >
-                <FaFacebook size={24} />
+                <FaFacebook size={20} />
               </a>
               <a
                 href="https://instagram.com/yakirlavi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-500 transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-400 hover:text-primary-500 hover:bg-gray-700 transition-colors"
+                aria-label="Instagram"
               >
-                <FaInstagram size={24} />
+                <FaInstagram size={20} />
               </a>
               <a
                 href="https://wa.me/972525664414"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-500 transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-400 hover:text-primary-500 hover:bg-gray-700 transition-colors"
+                aria-label="WhatsApp"
               >
-                <FaWhatsapp size={24} />
+                <FaWhatsapp size={20} />
               </a>
             </div>
           </div>
@@ -107,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Unleashed Potential. {t('footer.rights')}</p>
+          <p>&copy; {new Date().getFullYear()} {t('brand')}. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

@@ -28,15 +28,15 @@
       "israelNational": "Israel National 2023"
     },
     "video": {
-      "title": "Watch Our Training in Action",
-      "subtitle": "See the amazing transformations we achieve together",
+      "title": "Take a taste of our Training",
+      "subtitle": "See the results of our training",
       "placeholderTitle": "Your Training Video Here",
       "placeholderText": "Add an engaging video showing your training methods and happy dogs!",
       "iframeTitle": "Dog training videos from Yakir Lavi",
       "watchOnYoutube": "Watch More on YouTube"
     },
     "whyChoose": {
-      "title": "Why Choose Unleashed Potential?",
+      "title": "Why Choose YakiRikko?",
       "subtitle": "Every dog has potential waiting to be unlocked. Through classical training methods, clear communication, and structured discipline, I help dogs develop confidence, focus, and reliable obedience.",
       "learnMore": "Learn More About Me",
       "imageAlt": "Happy training dog",
@@ -75,10 +75,18 @@
       "title": "Competition Achievements",
       "subtitle": "Proven results at the highest levels of IGP competition",
       "items": [
-        { "title": "2nd Place Israel National Championship" },
-        { "title": "4th Place Israel National Championship" },
-        { "title": "5th Place Israel National Championship" },
-        { "title": "IGP World Championship Participant" }
+        {
+          "title": "2nd Place Israel National Championship"
+        },
+        {
+          "title": "4th Place Israel National Championship"
+        },
+        {
+          "title": "5th Place Israel National Championship"
+        },
+        {
+          "title": "IGP World Championship Participant"
+        }
       ]
     },
     "philosophy": {
@@ -153,8 +161,7 @@
           "2": "Precise heel work",
           "3": "Distance control",
           "4": "Impulse control",
-          "5": "Off-leash reliability",
-          "6": "Handler communication skills"
+          "5": "Off-leash reliability"
         }
       },
       "foundation": {
@@ -222,10 +229,22 @@
       "title": "How It Works",
       "subtitle": "Simple steps to transform your dog",
       "steps": {
-        "1": { "title": "Free Consultation", "description": "We discuss your goals and assess your dog's needs" },
-        "2": { "title": "Custom Plan", "description": "I create a personalized training program" },
-        "3": { "title": "Training Sessions", "description": "Regular sessions with homework and practice" },
-        "4": { "title": "Ongoing Support", "description": "Lifetime guidance and follow-up" }
+        "1": {
+          "title": "Free Consultation",
+          "description": "We discuss your goals and assess your dog's needs"
+        },
+        "2": {
+          "title": "Custom Plan",
+          "description": "I create a personalized training program"
+        },
+        "3": {
+          "title": "Training Sessions",
+          "description": "Regular sessions with homework and practice"
+        },
+        "4": {
+          "title": "Ongoing Support",
+          "description": "Lifetime guidance and follow-up"
+        }
       }
     },
     "cta": {
@@ -245,7 +264,8 @@
       "email": "Email",
       "location": "Location",
       "hours": "Hours",
-      "hoursText": "Sunday - Thursday: 6pm - 10pm\nFriday: 1pm - 4pm\nSaturday: Closed"
+      "hoursText": "Sunday - Thursday: 6pm - 10pm\nFriday: 1pm - 4pm\nSaturday: Closed",
+      "locationValue": "Herzliya, Israel"
     },
     "form": {
       "title": "Book a Free Consultation",
@@ -282,17 +302,43 @@
       "submit": "Send Message",
       "required": "* Required fields. We respect your privacy and will never share your information.",
       "thankYou": "Thank You!",
-      "thankYouMessage": "Your message has been sent successfully. I'll be in touch soon!"
+      "thankYouMessage": "Your message has been sent successfully. I'll be in touch soon!",
+      "placeholders": {
+        "fullName": "Full Name",
+        "email": "name@example.com",
+        "phone": "050-000-0000",
+        "dogName": "Rex",
+        "age": "2 years",
+        "breed": "German Shepherd"
+      }
     },
     "whyContact": {
       "title": "Why Work With Me?",
       "items": {
-        "1": { "title": "Expert Training", "text": "10+ years of professional experience" },
-        "2": { "title": "Personalized Approach", "text": "Every dog gets a custom training plan" },
-        "3": { "title": "Proven Results", "text": "500+ happy clients and dogs" },
-        "4": { "title": "Lifetime Support", "text": "Ongoing guidance even after training" },
-        "5": { "title": "Flexible Locations", "text": "Home visits and outdoor sessions" },
-        "6": { "title": "Satisfaction Guaranteed", "text": "Your success is my priority" }
+        "1": {
+          "title": "Expert Training",
+          "text": "10+ years of professional experience"
+        },
+        "2": {
+          "title": "Personalized Approach",
+          "text": "Every dog gets a custom training plan"
+        },
+        "3": {
+          "title": "Proven Results",
+          "text": "500+ happy clients and dogs"
+        },
+        "4": {
+          "title": "Lifetime Support",
+          "text": "Ongoing guidance even after training"
+        },
+        "5": {
+          "title": "Flexible Locations",
+          "text": "Home visits and outdoor sessions"
+        },
+        "6": {
+          "title": "Satisfaction Guaranteed",
+          "text": "Your success is my priority"
+        }
       }
     },
     "connect": {
@@ -346,34 +392,70 @@
     "photos": "photos",
     "items": {
       "1": {
-        "title": "Basic Obedience Training",
-        "description": "Max learning to sit and stay in the park"
+        "title": "Heelwork Focus",
+        "description": "Focused obedience and handler-dog connection"
       },
       "2": {
-        "title": "Puppy Socialization",
-        "description": "Group puppy training class"
+        "title": "Competition Obedience",
+        "description": "Precision heeling under trial conditions"
       },
       "3": {
-        "title": "Amazing Transformation",
-        "description": "Luna before and after behavior training"
+        "title": "Long Bite",
+        "description": "Power, control, and commitment in protection work"
       },
       "4": {
-        "title": "Leash Training",
-        "description": "Perfect heel position during walk"
+        "title": "Tracking Session",
+        "description": "Structured scent tracking in open field"
       },
       "5": {
-        "title": "Happy Puppy",
-        "description": "Celebrating graduation day"
+        "title": "Retrieve Over Obstacle",
+        "description": "Athletic obedience with dumbbell retrieve"
       },
       "6": {
-        "title": "Behavioral Success",
-        "description": "Before and after anxiety training"
+        "title": "Fast Retrieve",
+        "description": "Drive and speed in obedience retrieve"
       },
       "7": {
+        "title": "Agility Jump",
+        "description": "Confidence and coordination over obstacles"
+      },
+      "8": {
+        "title": "Protection Engagement",
+        "description": "Controlled targeting and grip quality"
+      },
+      "9": {
+        "title": "Bite Development",
+        "description": "Building intensity with clean handling"
+      },
+      "10": {
+        "title": "Competition Result",
+        "description": "Proud moment from a successful event"
+      },
+      "11": {
+        "title": "Trial-Style Heeling",
+        "description": "Focused movement in obedience pattern"
+      },
+      "12": {
+        "title": "Front Position Focus",
+        "description": "Attention and precision during obedience"
+      },
+      "13": {
+        "title": "Blind Search",
+        "description": "Control and commitment in protection phase"
+      },
+      "14": {
+        "title": "Dynamic Long Bite",
+        "description": "Explosive power and full engagement"
+      },
+      "15": {
+        "title": "Grip Work",
+        "description": "Technical bite work with steady control"
+      },
+      "16": {
         "title": "Puppy Playtime",
         "description": "Socialization through play"
       },
-      "8": {
+      "17": {
         "title": "Group Class",
         "description": "Outdoor group training session"
       }
@@ -410,6 +492,161 @@
     "contact": "Contact",
     "location": "Herzliya, Israel",
     "rights": "All rights reserved. Made with ❤️ for dogs."
+  },
+  "brand": "YakiRikko",
+  "testimonials": {
+    "hero": {
+      "title": "Client",
+      "titleHighlight": "Success Stories",
+      "subtitle": "Read what our happy clients and their furry friends have to say about their training experience"
+    },
+    "stats": {
+      "israelNational": "Israel National 2023",
+      "yearsIGP": "Years IGP Training",
+      "yearsExperience": "Years Experience",
+      "dogsTrained": "Dogs Trained"
+    },
+    "list": {
+      "title": "What Our Clients Say",
+      "subtitle": "Real stories from real dog owners",
+      "ownerOf": "Owner of {{dogName}}"
+    },
+    "empty": {
+      "title": "Be Our First Testimonial!",
+      "subtitle": "We're building our success story collection. Train with us and share your experience to help other dog owners!"
+    },
+    "form": {
+      "title": "Share Your Experience",
+      "subtitle": "We'd love to hear about your dog's training journey!",
+      "yourName": "Your Name",
+      "dogName": "Your Dog's Name",
+      "email": "Email Address",
+      "rating": "Your Rating",
+      "experience": "Your Experience",
+      "placeholders": {
+        "name": "Full Name",
+        "dogName": "Rex",
+        "email": "name@example.com",
+        "experience": "Tell us about your experience with our training services..."
+      },
+      "submit": "Submit Testimonial",
+      "required": "* Required fields. Your testimonial may be featured on our website and marketing materials.",
+      "thankYou": "Thank You!",
+      "thankYouMessage": "Your testimonial has been submitted successfully. We appreciate your feedback!"
+    },
+    "cta": {
+      "title": "Ready to Create Your Own Success Story?",
+      "subtitle": "Join hundreds of happy clients and transform your dog today!",
+      "button": "Start Your Journey"
+    }
+  },
+  "quiz": {
+    "title": "What Training Does Your Dog Need?",
+    "subtitle": "Take our quick quiz to get personalized recommendations!",
+    "questionOf": "Question {{current}} of {{total}}",
+    "percentComplete": "{{percent}}% Complete",
+    "resultsTitle": "Perfect! Here's Your Recommendation",
+    "tipsTitle": "Tips for Your Dog:",
+    "takeAgain": "Take Quiz Again",
+    "bookSession": "Book a Session",
+    "questions": {
+      "1": {
+        "question": "What's your dog's current age?",
+        "options": {
+          "puppy": "Puppy (0-6 months)",
+          "young": "Young (6-18 months)",
+          "adult": "Adult (1.5+ years)",
+          "senior": "Senior (7+ years)"
+        }
+      },
+      "2": {
+        "question": "What's your primary training goal?",
+        "options": {
+          "basic": "Basic Obedience",
+          "behavior": "Behavior Correction",
+          "advanced": "IGP Sport Training",
+          "socialization": "Working Dog Foundation"
+        }
+      },
+      "3": {
+        "question": "How would you describe your dog's energy level?",
+        "options": {
+          "low": "Calm & Relaxed",
+          "moderate": "Moderate Energy",
+          "high": "High Energy",
+          "very-high": "Super Energetic!"
+        }
+      }
+    },
+    "results": {
+      "puppy": {
+        "title": "🐶 Working Dog Foundation Program",
+        "program": "Perfect for your young pup!",
+        "description": "Your puppy is at the ideal age to start structured training! Our Working Dog Foundation Program establishes obedience, builds drive, and creates a solid foundation for future training or sport work.",
+        "tips": {
+          "1": "Start with clear boundaries and consistent rules from day one",
+          "2": "Build drive through play and structured exercises",
+          "3": "Establish handler focus and clear communication early",
+          "4": "Assess temperament and aptitude for future sport or work"
+        }
+      },
+      "behavior": {
+        "title": "🔧 Behavior Modification Program",
+        "program": "Specialized behavior correction",
+        "description": "Using classical training methods, we'll establish clear boundaries and structure to address behavioral challenges. Every behavior problem has a solution through proper leadership and consistent rules.",
+        "tips": {
+          "1": "Establish clear rules and boundaries immediately",
+          "2": "Consistency from all family members is critical",
+          "3": "Structure and routine help dogs feel secure",
+          "4": "Leadership and clear communication solve most behavior issues"
+        }
+      },
+      "highEnergy": {
+        "title": "⚡ IGP Sport Training Program",
+        "program": "Perfect for high-drive dogs",
+        "description": "Your energetic dog is an ideal candidate for IGP sport! Channel that drive into tracking, obedience, and protection work. This demanding sport provides the mental and physical challenge high-energy dogs need.",
+        "tips": {
+          "1": "High-drive dogs excel in structured sport training",
+          "2": "IGP provides physical and mental challenges",
+          "3": "Proper outlet for drive prevents behavior problems",
+          "4": "Consider joining a local IGP club for training"
+        }
+      },
+      "advanced": {
+        "title": "🏆 IGP Sport Training",
+        "program": "Competition-level training",
+        "description": "Ready for serious training! IGP sport training develops precision obedience, tracking skills, and protection work. Learn from a trainer with proven success at national and international competitions.",
+        "tips": {
+          "1": "IGP training builds incredible dog-handler teamwork",
+          "2": "Requires commitment but delivers amazing results",
+          "3": "Competition experience helps develop skills faster",
+          "4": "Join a training club for regular practice and community"
+        }
+      },
+      "default": {
+        "title": "📝 Classical Obedience Program",
+        "program": "Build a strong foundation",
+        "description": "Structured obedience training using classical methods. We'll establish reliable commands, clear boundaries, and consistent behavior through proven training techniques.",
+        "tips": {
+          "1": "Classical methods create reliable, long-lasting results",
+          "2": "Clear communication and consistency are essential",
+          "3": "Structure and rules help dogs feel confident",
+          "4": "Foundation work prepares dogs for advanced training"
+        }
+      }
+    }
+  },
+  "dogOfTheWeek": {
+    "title": "Dog of the Week",
+    "subtitle": "Celebrating our amazing success stories!",
+    "photoTitle": "Featured Dog Photo",
+    "photoSubtitle": "Add a photo of this week's star student!",
+    "name": "Max the Golden Retriever",
+    "achievementLabel": "Achievement:",
+    "achievement": "Mastered Advanced Obedience",
+    "story": "Max came to us as an energetic puppy who loved to jump on everyone. After 8 weeks of dedicated training, he's now a well-behaved gentleman who responds to over 15 commands and has even started agility training!",
+    "quote": "\"The transformation has been incredible! Max is now the perfect companion, and we couldn't be happier!\" - Sarah, Max's Owner",
+    "weeks": "8 Weeks of Training",
+    "commands": "15+ Commands Mastered"
   }
 }
-
