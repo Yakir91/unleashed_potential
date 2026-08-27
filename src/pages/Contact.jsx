@@ -18,27 +18,55 @@ export default function Contact() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
-  const handleSubmit = (e) => {
+  const resetForm = () => ({
+    name: '',
+    email: '',
+    phone: '',
+    dogName: '',
+    dogAge: '',
+    dogBreed: '',
+    trainingType: '',
+    preferredDate: '',
+    preferredTime: '',
+    message: '',
+  })
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Here you would normally send the data to your backend
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        dogName: '',
-        dogAge: '',
-        dogBreed: '',
-        trainingType: '',
-        preferredDate: '',
-        preferredTime: '',
-        message: '',
+    setSubmitError('')
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      const payload = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        throw new Error(payload.error || t('contact.form.submitError'))
+      }
+
+      setSubmitted(true)
+      setFormData(resetForm())
+      // Keep success visible until the user continues; scroll it into view
+      requestAnimationFrame(() => {
+        document.getElementById('contact-form-feedback')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        })
+      })
+    } catch (error) {
+      console.error('Contact submit failed:', error)
+      setSubmitError(t('contact.form.submitError'))
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -60,8 +88,8 @@ export default function Contact() {
     {
       icon: FaEnvelope,
       title: t('contact.info.email'),
-      content: 'unleashedpotential@gmail.com',
-      link: 'mailto:unleashedpotential@gmail.com',
+      content: 'yakirikko1@gmail.com',
+      link: 'mailto:yakirikko1@gmail.com',
       color: 'from-secondary-500 to-secondary-600',
     },
     {
@@ -167,27 +195,39 @@ export default function Contact() {
                 {t('contact.form.subtitle')}
               </p>
 
-              <div className="bg-white rounded-3xl shadow-2xl p-8">
+              <div id="contact-form-feedback" className="bg-white rounded-3xl shadow-2xl p-8">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
+                    role="status"
+                    aria-live="polite"
                   >
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-500 rounded-full mb-6">
                       <FaPaperPlane className="text-4xl text-white" />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('contact.form.thankYou')}</h3>
-                    <p className="text-xl text-gray-600">
+                    <p className="text-xl text-gray-600 mb-8">
                       {t('contact.form.thankYouMessage')}
                     </p>
+                    <div className="mx-auto mb-8 max-w-md rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-800">
+                      {t('contact.form.successAlert')}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="btn-outline"
+                    >
+                      {t('contact.form.sendAnother')}
+                    </button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Owner Information */}
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm mr-2">1</span>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm">1</span>
                         {t('contact.form.yourInfo')}
                       </h3>
                       <div className="space-y-4">
@@ -245,8 +285,8 @@ export default function Contact() {
 
                     {/* Dog Information */}
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm mr-2">2</span>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm">2</span>
                         {t('contact.form.aboutDog')}
                       </h3>
                       <div className="space-y-4">
@@ -304,8 +344,8 @@ export default function Contact() {
 
                     {/* Training Information */}
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm mr-2">3</span>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm">3</span>
                         {t('contact.form.trainingDetails')}
                       </h3>
                       <div className="space-y-4">
@@ -386,13 +426,20 @@ export default function Contact() {
 
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full btn-primary flex items-center justify-center space-x-2"
+                      disabled={isSubmitting}
+                      whileHover={isSubmitting ? undefined : { scale: 1.02 }}
+                      whileTap={isSubmitting ? undefined : { scale: 0.98 }}
+                      className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       <FaPaperPlane />
-                      <span>{t('contact.form.submit')}</span>
+                      <span>{isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}</span>
                     </motion.button>
+
+                    {submitError && (
+                      <p className="text-sm text-red-600 text-center" role="alert">
+                        {submitError}
+                      </p>
+                    )}
 
                     <p className="text-sm text-gray-500 text-center">
                       {t('contact.form.required')}
@@ -430,7 +477,7 @@ export default function Contact() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="flex items-start space-x-3"
+                      className="flex items-start gap-3"
                     >
                       <div className="text-3xl">{item.icon}</div>
                       <div>
@@ -450,7 +497,7 @@ export default function Contact() {
                 <p className="text-gray-600 mb-6">
                   {t('contact.connect.subtitle')}
                 </p>
-                <div className="flex space-x-4">
+                <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
@@ -513,11 +560,11 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6"
               >
-                <h3 className="font-semibold text-gray-900 text-lg mb-2 flex items-center">
-                  <FaPaw className="text-primary-500 mr-2" />
+                <h3 className="font-semibold text-gray-900 text-lg mb-2 flex items-center gap-2">
+                  <FaPaw className="text-primary-500 shrink-0" />
                   {faq.q}
                 </h3>
-                <p className="text-gray-700 pl-7">{faq.a}</p>
+                <p className="text-gray-700 ps-7">{faq.a}</p>
               </motion.div>
             ))}
           </div>

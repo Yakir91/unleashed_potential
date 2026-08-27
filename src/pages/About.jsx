@@ -259,22 +259,35 @@ export default function About() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2].map((item) => (
+            {[
+              {
+                id: 1,
+                embedUrl: 'https://www.youtube.com/embed/ea0BZdbXFhw',
+                title: t('about.video.items.1.title'),
+              },
+              {
+                id: 2,
+                embedUrl: 'https://www.youtube.com/embed/aZ8NKb7Sz3E',
+                title: t('about.video.items.2.title'),
+              },
+            ].map((item, index) => (
               <motion.div
-                key={item}
+                key={item.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: item * 0.2 }}
+                transition={{ duration: 0.5, delay: (index + 1) * 0.2 }}
                 className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary-500 to-secondary-600 aspect-video"
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <FaPaw className="text-6xl mb-4 mx-auto animate-pulse" />
-                    <p className="text-xl font-semibold">{t('about.video.placeholder')} {item}</p>
-                    <p className="text-white/80 mt-2">{t('about.video.placeholderText')}</p>
-                  </div>
-                </div>
+                <iframe
+                  src={item.embedUrl}
+                  title={item.title}
+                  className="absolute inset-0 h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </motion.div>
             ))}
           </div>

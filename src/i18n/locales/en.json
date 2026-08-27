@@ -59,7 +59,7 @@
     "hero": {
       "title": "About",
       "titleHighlight": "Me",
-      "subtitle": "Passionate dog trainer, animal lover, and your partner in creating the perfect bond with your furry friend"
+      "subtitle": "Passionate dog trainer, animal lover, and your partner in creating the perfect bond with your dog"
     },
     "story": {
       "badge": "My Journey",
@@ -122,7 +122,15 @@
       "title": "See Me in Action",
       "subtitle": "Watch real training sessions and transformations",
       "placeholder": "Training Video",
-      "placeholderText": "Add your training video here"
+      "placeholderText": "Add your training video here",
+      "items": {
+        "1": {
+          "title": "Simba heeling session"
+        },
+        "2": {
+          "title": "Nala first track"
+        }
+      }
     },
     "cta": {
       "title": "Let's Work Together!",
@@ -264,7 +272,7 @@
       "email": "Email",
       "location": "Location",
       "hours": "Hours",
-      "hoursText": "Sunday - Thursday: 6pm - 10pm\nFriday: 1pm - 4pm\nSaturday: Closed",
+      "hoursText": "Sunday : 7AM - 8PM\nMonday : 7AM - 2PM\nTuesday-Thursday : 7AM - 8PM\nFriday : 2PM - 4PM\nSaturday: Closed",
       "locationValue": "Herzliya, Israel"
     },
     "form": {
@@ -300,9 +308,13 @@
       "additionalInfo": "Additional Information",
       "additionalPlaceholder": "Tell me about your dog's personality, any specific concerns, or training goals...",
       "submit": "Send Message",
+      "sending": "Sending...",
+      "submitError": "Could not send your message. Please try again or contact us by phone.",
       "required": "* Required fields. We respect your privacy and will never share your information.",
       "thankYou": "Thank You!",
       "thankYouMessage": "Your message has been sent successfully. I'll be in touch soon!",
+      "successAlert": "✓ Message sent successfully. Check your inbox soon for a reply.",
+      "sendAnother": "Send another message",
       "placeholders": {
         "fullName": "Full Name",
         "email": "name@example.com",

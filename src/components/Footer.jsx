@@ -99,7 +99,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <FaEnvelope className="text-primary-500" />
-                <span>unleashedpotential@gmail.com</span>
+                <span>yakirikko1@gmail.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <FaMapMarkerAlt className="text-primary-500 mt-1" />

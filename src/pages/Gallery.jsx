@@ -213,7 +213,7 @@ export default function Gallery() {
             <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-12 shadow-lg">
               <FaPaw className="text-6xl text-primary-500 mx-auto mb-6" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('gallery.upload.sectionTitle')}</h3>
-              <div className="text-left max-w-2xl mx-auto space-y-3 text-gray-700">
+              <div className="text-start max-w-2xl mx-auto space-y-3 text-gray-700">
                 <p>{t('gallery.upload.tips.1')}</p>
                 <p>{t('gallery.upload.tips.2')}</p>
                 <p>{t('gallery.upload.tips.3')}</p>
