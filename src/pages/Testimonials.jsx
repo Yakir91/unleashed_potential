@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaStar, FaQuoteLeft, FaPaw, FaHeart, FaPaperPlane, FaTrophy } from 'react-icons/fa'
+import { FaStar, FaQuoteLeft, FaPaw, FaHeart, FaPaperPlane } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 export default function Testimonials() {
@@ -83,10 +83,10 @@ export default function Testimonials() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: FaTrophy, number: '2nd', label: t('testimonials.stats.israelNational') },
-              { icon: FaStar, number: '8', label: t('testimonials.stats.yearsIGP') },
-              { icon: FaPaw, number: '10+', label: t('testimonials.stats.yearsExperience') },
-              { icon: FaHeart, number: '500+', label: t('testimonials.stats.dogsTrained') },
+              { icon: FaPaw, number: '500+', label: t('testimonials.stats.dogsTrained') },
+              { icon: FaStar, number: '10+', label: t('testimonials.stats.yearsExperience') },
+              { icon: FaHeart, number: '100%', label: t('testimonials.stats.behaviorPrograms') },
+              { icon: FaPaw, number: '1:1', label: t('testimonials.stats.privateSessions') },
             ].map((stat, index) => (
               <motion.div
                 key={index}

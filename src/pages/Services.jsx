@@ -1,65 +1,83 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaPaw, FaBone, FaTrophy, FaHeart, FaCheckCircle, FaStar, FaDog, FaUsers } from 'react-icons/fa'
+import { FaPaw, FaBone, FaTrophy, FaHeart, FaCheckCircle, FaStar, FaDog } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+
+function ServiceCard({ service, expandedService, setExpandedService, t }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: service.delay * 0.1 }}
+      className="relative"
+    >
+      <div
+        className={`card cursor-pointer transition-all duration-300 ${
+          expandedService === service.id ? 'scale-105 ring-4 ring-primary-300' : ''
+        }`}
+        onClick={() => setExpandedService(expandedService === service.id ? null : service.id)}
+      >
+        <div className={`bg-gradient-to-r ${service.color} p-6 text-white`}>
+          <service.icon className="text-5xl mb-4" />
+          <h3 className="text-2xl font-bold mb-1">{service.title}</h3>
+          <p className="text-white/90 text-sm">{service.subtitle}</p>
+        </div>
+
+        <div className="p-6">
+          <p className="text-gray-600 mb-4">{service.description}</p>
+
+          <div className="flex justify-end items-center mb-4 pb-4 border-b border-gray-200">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-primary-500 font-semibold"
+            >
+              {expandedService === service.id ? t('services.showLess') + ' ▲' : t('services.learnMore') + ' ▼'}
+            </motion.button>
+          </div>
+
+          <AnimatePresence>
+            {expandedService === service.id && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="mb-4">
+                  <p className="text-gray-700 mb-4">{service.details}</p>
+                  <h4 className="font-semibold text-gray-900 mb-3">{t('services.whatsIncluded')}</h4>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-2">
+                        <FaCheckCircle className="text-primary-500 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link to="/contact" className="block w-full text-center btn-primary">
+                  {t('services.bookService')}
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 export default function Services() {
   const { t } = useTranslation()
   const [expandedService, setExpandedService] = useState(null)
 
-  const services = [
+  const houseServices = [
     {
-      id: 1,
-      icon: FaTrophy,
-      title: t('services.items.igp.title'),
-      subtitle: t('services.items.igp.subtitle'),
-      description: t('services.items.igp.description'),
-      color: 'from-primary-500 to-secondary-500',
-      features: [
-        t('services.items.igp.features.1'),
-        t('services.items.igp.features.2'),
-        t('services.items.igp.features.3'),
-        t('services.items.igp.features.4'),
-        t('services.items.igp.features.5')
-      ],
-      details: t('services.items.igp.details'),
-    },
-    {
-      id: 2,
-      icon: FaBone,
-      title: t('services.items.obedience.title'),
-      subtitle: t('services.items.obedience.subtitle'),
-      description: t('services.items.obedience.description'),
-      color: 'from-secondary-400 to-secondary-600',
-      features: [
-        t('services.items.obedience.features.1'),
-        t('services.items.obedience.features.2'),
-        t('services.items.obedience.features.3'),
-        t('services.items.obedience.features.4'),
-        t('services.items.obedience.features.5')
-      ],
-      details: t('services.items.obedience.details'),
-    },
-    {
-      id: 3,
-      icon: FaPaw,
-      title: t('services.items.foundation.title'),
-      subtitle: t('services.items.foundation.subtitle'),
-      description: t('services.items.foundation.description'),
-      color: 'from-primary-400 to-primary-600',
-      features: [
-        t('services.items.foundation.features.1'),
-        t('services.items.foundation.features.2'),
-        t('services.items.foundation.features.3'),
-        t('services.items.foundation.features.4'),
-        t('services.items.foundation.features.5'),
-        t('services.items.foundation.features.6'),
-      ],
-      details: t('services.items.foundation.details'),
-    },
-    {
-      id: 4,
+      id: 'behavior',
+      delay: 0,
       icon: FaHeart,
       title: t('services.items.behavior.title'),
       subtitle: t('services.items.behavior.subtitle'),
@@ -76,21 +94,25 @@ export default function Services() {
       details: t('services.items.behavior.details'),
     },
     {
-      id: 5,
-      icon: FaStar,
-      title: t('services.items.tracking.title'),
-      subtitle: t('services.items.tracking.subtitle'),
-      description: t('services.items.tracking.description'),
-      color: 'from-secondary-500 to-accent-500',
+      id: 'obedience',
+      delay: 1,
+      icon: FaBone,
+      title: t('services.items.obedience.title'),
+      subtitle: t('services.items.obedience.subtitle'),
+      description: t('services.items.obedience.description'),
+      color: 'from-secondary-400 to-secondary-600',
       features: [
-        t('services.items.tracking.features.1'),
-        t('services.items.tracking.features.2'),
-        t('services.items.tracking.features.3')
+        t('services.items.obedience.features.1'),
+        t('services.items.obedience.features.2'),
+        t('services.items.obedience.features.3'),
+        t('services.items.obedience.features.4'),
+        t('services.items.obedience.features.5'),
       ],
-      details: t('services.items.tracking.details'),
+      details: t('services.items.obedience.details'),
     },
     {
-      id: 6,
+      id: 'private',
+      delay: 2,
       icon: FaDog,
       title: t('services.items.private.title'),
       subtitle: t('services.items.private.subtitle'),
@@ -108,6 +130,59 @@ export default function Services() {
     },
   ]
 
+  const igpServices = [
+    {
+      id: 'igp',
+      delay: 0,
+      icon: FaTrophy,
+      title: t('services.items.igp.title'),
+      subtitle: t('services.items.igp.subtitle'),
+      description: t('services.items.igp.description'),
+      color: 'from-primary-500 to-secondary-500',
+      features: [
+        t('services.items.igp.features.1'),
+        t('services.items.igp.features.2'),
+        t('services.items.igp.features.3'),
+        t('services.items.igp.features.4'),
+        t('services.items.igp.features.5'),
+      ],
+      details: t('services.items.igp.details'),
+    },
+    {
+      id: 'foundation',
+      delay: 1,
+      icon: FaPaw,
+      title: t('services.items.foundation.title'),
+      subtitle: t('services.items.foundation.subtitle'),
+      description: t('services.items.foundation.description'),
+      color: 'from-primary-400 to-primary-600',
+      features: [
+        t('services.items.foundation.features.1'),
+        t('services.items.foundation.features.2'),
+        t('services.items.foundation.features.3'),
+        t('services.items.foundation.features.4'),
+        t('services.items.foundation.features.5'),
+        t('services.items.foundation.features.6'),
+      ],
+      details: t('services.items.foundation.details'),
+    },
+    {
+      id: 'tracking',
+      delay: 2,
+      icon: FaStar,
+      title: t('services.items.tracking.title'),
+      subtitle: t('services.items.tracking.subtitle'),
+      description: t('services.items.tracking.description'),
+      color: 'from-secondary-500 to-accent-500',
+      features: [
+        t('services.items.tracking.features.1'),
+        t('services.items.tracking.features.2'),
+        t('services.items.tracking.features.3'),
+      ],
+      details: t('services.items.tracking.details'),
+    },
+  ]
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -120,87 +195,67 @@ export default function Services() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-display">
-              {t('services.hero.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">{t('services.hero.titleHighlight')}</span>
+              {t('services.hero.title')}{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">
+                {t('services.hero.titleHighlight')}
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('services.hero.subtitle')}
-            </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('services.hero.subtitle')}</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* House Dog Services */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="section-title">{t('services.houseSection.title')}</h2>
+            <p className="section-subtitle">{t('services.houseSection.subtitle')}</p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
+            {houseServices.map((service) => (
+              <ServiceCard
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div
-                  className={`card cursor-pointer transition-all duration-300 ${
-                    expandedService === service.id ? 'scale-105 ring-4 ring-primary-300' : ''
-                  }`}
-                  onClick={() => setExpandedService(expandedService === service.id ? null : service.id)}
-                >
-                  {/* Icon Header */}
-                  <div className={`bg-gradient-to-r ${service.color} p-6 text-white`}>
-                    <service.icon className="text-5xl mb-4" />
-                    <h3 className="text-2xl font-bold mb-1">{service.title}</h3>
-                    <p className="text-white/90 text-sm">{service.subtitle}</p>
-                  </div>
+                service={service}
+                expandedService={expandedService}
+                setExpandedService={setExpandedService}
+                t={t}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    
-                    <div className="flex justify-end items-center mb-4 pb-4 border-b border-gray-200">
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="text-primary-500 font-semibold"
-                      >
-                        {expandedService === service.id ? t('services.showLess') + ' ▲' : t('services.learnMore') + ' ▼'}
-                      </motion.button>
-                    </div>
+      {/* IGP Sport Services */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4 font-display">{t('services.igpSection.title')}</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t('services.igpSection.subtitle')}</p>
+          </motion.div>
 
-                    <AnimatePresence>
-                      {expandedService === service.id && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <div className="mb-4">
-                            <p className="text-gray-700 mb-4">{service.details}</p>
-                            <h4 className="font-semibold text-gray-900 mb-3">{t('services.whatsIncluded')}</h4>
-                            <ul className="space-y-2">
-                              {service.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-start space-x-2">
-                                  <FaCheckCircle className="text-primary-500 mt-1 flex-shrink-0" />
-                                  <span className="text-gray-700">{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <Link
-                            to="/contact"
-                            className="block w-full text-center btn-primary"
-                          >
-                            {t('services.bookService')}
-                          </Link>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </div>
-              </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {igpServices.map((service) => (
+              <ServiceCard
+                key={service.id}
+                service={service}
+                expandedService={expandedService}
+                setExpandedService={setExpandedService}
+                t={t}
+              />
             ))}
           </div>
         </div>
@@ -255,12 +310,8 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
-              {t('services.cta.title')}
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              {t('services.cta.subtitle')}
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">{t('services.cta.title')}</h2>
+            <p className="text-xl text-white/90 mb-8">{t('services.cta.subtitle')}</p>
             <Link
               to="/contact"
               className="inline-block bg-white text-primary-600 px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
@@ -273,4 +324,3 @@ export default function Services() {
     </div>
   )
 }
-

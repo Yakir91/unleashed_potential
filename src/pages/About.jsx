@@ -126,7 +126,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Certifications Section */}
+      {/* Professional Experience Section */}
       <section className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -136,23 +136,36 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="section-title">{t('about.certifications.title')}</h2>
-            <p className="section-subtitle">{t('about.certifications.subtitle')}</p>
+            <h2 className="section-title">{t('about.experience.title')}</h2>
+            <p className="section-subtitle">{t('about.experience.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[0, 1, 2].map((index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card p-6 text-center hover:scale-105"
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="card p-8 hover:scale-[1.02] transition-transform duration-300"
               >
-                <cert.icon className="text-5xl text-primary-500 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{cert.title}</h3>
-                <p className="text-gray-600">{cert.year}</p>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full shrink-0">
+                    <FaGraduationCap className="text-2xl text-white" />
+                  </div>
+                  <div>
+                    <p className="text-primary-600 font-semibold">
+                      {t(`about.experience.items.${index}.year`)} · {t(`about.experience.items.${index}.location`)}
+                    </p>
+                    <h3 className="text-xl font-bold text-gray-900 mt-1 font-display">
+                      {t(`about.experience.items.${index}.title`)}
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  {t(`about.experience.items.${index}.description`)}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -209,38 +222,81 @@ export default function About() {
               {t('about.approach.title')}
             </h3>
             
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 text-lg">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-6 text-gray-700 text-lg max-w-3xl mx-auto">
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
-                  <p dangerouslySetInnerHTML={{ __html: t('about.approach.points.0') }} />
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
-                  <p dangerouslySetInnerHTML={{ __html: t('about.approach.points.1') }} />
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
-                  <p dangerouslySetInnerHTML={{ __html: t('about.approach.points.2') }} />
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
-                  <p dangerouslySetInnerHTML={{ __html: t('about.approach.points.3') }} />
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
-                  <p dangerouslySetInnerHTML={{ __html: t('about.approach.points.4') }} />
-                </div>
-                <div className="flex items-start gap-3">
-                  <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
-                  <p dangerouslySetInnerHTML={{ __html: t('about.approach.points.5') }} />
-                </div>
+                {[0, 1, 2].map((index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <FaPaw className="text-primary-500 mt-1 flex-shrink-0" />
+                    <p dangerouslySetInnerHTML={{ __html: t(`about.approach.points.${index}`) }} />
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* IGP Sport Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4 font-display">{t('about.igpSport.title')}</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t('about.igpSport.subtitle')}</p>
+            <p className="text-gray-400 max-w-3xl mx-auto mt-4 leading-relaxed">{t('about.igpSport.intro')}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+            {[0, 1, 2].map((index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-3 bg-white/5 rounded-xl p-5"
+              >
+                <FaTrophy className="text-primary-400 mt-1 shrink-0" />
+                <p
+                  className="text-gray-300"
+                  dangerouslySetInnerHTML={{ __html: t(`about.igpSport.points.${index}`) }}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-2xl font-bold mb-2 font-display">{t('about.certifications.title')}</h3>
+            <p className="text-gray-400">{t('about.certifications.subtitle')}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/10 rounded-2xl p-6 text-center hover:bg-white/15 transition-colors"
+              >
+                <cert.icon className="text-5xl text-primary-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+                <p className="text-gray-400">{cert.year}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

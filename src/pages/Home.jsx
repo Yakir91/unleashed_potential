@@ -10,8 +10,14 @@ export default function Home() {
   const stats = [
     { icon: FaTrophy, number: '500+', label: t('home.stats.dogsTrained') },
     { icon: FaUserFriends, number: '10+', label: t('home.stats.yearsExperience') },
-    { icon: FaStar, number: '8', label: t('home.stats.yearsIGP') },
-    { icon: FaHeart, number: '2nd', label: t('home.stats.israelNational') },
+    { icon: FaHeart, number: '100%', label: t('home.stats.behaviorPrograms') },
+    { icon: FaCheckCircle, number: '1:1', label: t('home.stats.privateSessions') },
+  ]
+
+  const igpBenefits = [
+    t('home.igpSport.benefits.1'),
+    t('home.igpSport.benefits.2'),
+    t('home.igpSport.benefits.3'),
   ]
 
   const benefits = [
@@ -227,6 +233,51 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* IGP Sport Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="inline-block bg-primary-500/20 text-primary-300 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                {t('home.igpSport.badge')}
+              </span>
+              <h2 className="text-4xl font-bold mb-4 font-display">{t('home.igpSport.title')}</h2>
+              <p className="text-xl text-gray-300 mb-4">{t('home.igpSport.subtitle')}</p>
+              <p className="text-gray-400 mb-8 leading-relaxed">{t('home.igpSport.description')}</p>
+              <ul className="space-y-3 mb-8">
+                {igpBenefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <FaStar className="text-primary-400 mt-1 shrink-0" />
+                    <span className="text-gray-300">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link to="/services" className="btn-primary inline-block">
+                {t('home.igpSport.button')}
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square"
+            >
+              <img
+                src="/images/home/second_place.jpg"
+                alt={t('home.hero.imageAlt')}
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>

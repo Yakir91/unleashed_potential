@@ -11,10 +11,10 @@
   "home": {
     "hero": {
       "badge": "Professional Dog Training",
-      "title": "Professional Dog Training &",
-      "titleHighlight": " IGP Sport Excellence",
-      "subtitle": "Hi, I'm {{name}}! With over 10 years of experience as a classical dog trainer and 8 years specializing in IGP sport training, I help dogs reach their full potential through proven, structured training methods.",
-      "bookConsultation": "Book a Free Consultation",
+      "title": "Professional Training for",
+      "titleHighlight": " Your Family Dog",
+      "subtitle": "Hi, I'm {{name}}! With over 10 years of experience, I help owners build calm, obedient, and happy dogs at home — from basic obedience and leash manners to solving behavior problems — using proven, structured classical methods.",
+      "bookConsultation": "Book a Consultation",
       "exploreServices": "Explore Services",
       "certified": "Certified Trainer",
       "insured": "Insured & Bonded",
@@ -24,8 +24,8 @@
     "stats": {
       "dogsTrained": "Dogs Trained",
       "yearsExperience": "Years Experience",
-      "yearsIGP": "Years IGP Training",
-      "israelNational": "Israel National 2023"
+      "behaviorPrograms": "Behavior Programs",
+      "privateSessions": "Private Sessions"
     },
     "video": {
       "title": "Take a taste of our Training",
@@ -37,43 +37,79 @@
     },
     "whyChoose": {
       "title": "Why Choose YakiRikko?",
-      "subtitle": "Every dog has potential waiting to be unlocked. Through classical training methods, clear communication, and structured discipline, I help dogs develop confidence, focus, and reliable obedience.",
+      "subtitle": "Most of my clients are family dog owners who want a well-behaved companion at home. I focus on clear communication, consistent structure, and practical results you can use every day.",
       "learnMore": "Learn More About Me",
-      "imageAlt": "Happy training dog",
+      "imageAlt": "Happy family dog during training",
       "benefits": {
-        "1": "Classical training methods with proven results",
-        "2": "IGP sport training and competition preparation",
-        "3": "Obedience, tracking, and protection training",
-        "4": "Individual and group sessions available",
-        "5": "National and international competition experience",
-        "6": "Structured programs for working dogs and sport dogs"
+        "1": "Basic obedience and reliable everyday manners",
+        "2": "Behavior problem solving — reactivity, anxiety, and more",
+        "3": "In-home and outdoor sessions tailored to your routine",
+        "4": "Classical training methods with proven, lasting results",
+        "5": "Personalized plans for your dog's age, breed, and personality",
+        "6": "Handler coaching so you know how to train confidently at home"
       }
+    },
+    "igpSport": {
+      "badge": "Advanced Sport Training",
+      "title": "IGP Sport Training",
+      "subtitle": "For handlers and dogs pursuing competition in tracking, obedience, and protection work",
+      "description": "Beyond everyday companion training, I also offer advanced IGP sport programs for serious handlers. With 8 years of IGP experience and national and international competition results, I help sport dogs and working dogs reach trial-level performance.",
+      "benefits": {
+        "1": "Full IGP preparation — tracking, obedience, and protection",
+        "2": "Competition experience including Israel National Championship results",
+        "3": "Working dog foundation for young sport prospects"
+      },
+      "button": "Explore IGP Services"
     },
     "cta": {
       "title": "Ready to Start Your Dog's Training Journey?",
-      "subtitle": "Let's work together to bring out the best in your furry friend. Book your free consultation today!",
-      "button": "Book Your Free Consultation"
+      "subtitle": "Let's work together to bring out the best in your furry friend. Book your consultation today!",
+      "button": "Book Your Consultation"
     }
   },
   "about": {
     "hero": {
       "title": "About",
       "titleHighlight": "Me",
-      "subtitle": "Passionate dog trainer, animal lover, and your partner in creating the perfect bond with your dog"
+      "subtitle": "Professional dog trainer specializing in companion and house dogs — with advanced expertise in IGP sport for competition handlers"
     },
     "story": {
       "badge": "My Journey",
-      "title": "A Lifelong Love for Dogs",
-      "paragraph1": "Hi! I'm <strong>Yakir Lavi</strong>, and my passion for dog training began over a decade ago. What started as an interest in basic obedience quickly evolved into a deep commitment to classical training methods and the competitive world of IGP (Internationale Gebrauchshunde Prüfung) dog sport.",
-      "paragraph2": "For the past <strong>8 years</strong>, I've dedicated myself to mastering IGP training - a demanding sport that tests a dog's tracking abilities, obedience precision, and protection work. This journey has taken me to the highest levels of competition, including the <strong>IGP World Championship in 2023</strong>.",
-      "paragraph3": "My competitive achievements include <strong>2nd place at the Israel National Championship in 2023</strong>, followed by 4th place in 2024 and 5th place in 2025. These competitions aren't just about winning - they're about demonstrating the incredible results that come from structured, classical training methods.",
-      "paragraph4": "Over <strong>10 years</strong> of experience, I've trained more than <strong>500 dogs</strong> - from family companions needing reliable obedience to working dogs preparing for competitions. I believe in clear communication, consistent structure, and helping every dog reach its full potential through proven training techniques.",
-      "quote": "My mission is to unlock every dog's potential through classical training methods. Whether you want a reliable family companion or a competitive sport dog, I provide the structure, discipline, and expertise to achieve real results.",
+      "title": "Training Dogs for Real Life at Home",
+      "paragraph1": "Hi! I'm <strong>Yakir Lavi</strong>, and for over a decade my main work has been helping families live better with their dogs. I train companion and house dogs in basic obedience, leash manners, impulse control, and solving everyday behavior problems — always through clear structure and classical methods.",
+      "paragraph2": "My professional path began with dedicated training in companion dogs: understanding dog psychology, correcting behavior issues, and building reliable obedience for life at home. That foundation is what most of my clients benefit from today.",
+      "paragraph3": "Over <strong>10 years</strong>, I've trained more than <strong>500 dogs</strong> — puppies learning their first rules, adolescent dogs with too much energy, and adult dogs with behavior challenges. I believe every family deserves a dog they can trust and enjoy in daily life.",
+      "paragraph4": "Alongside this work, I developed deep expertise in <strong>IGP sport</strong> — a demanding discipline combining tracking, precision obedience, and protection. That advanced path is available for handlers who want to compete, and you can read more about it in the dedicated section below.",
+      "quote": "My mission is to help you build a calm, confident, and well-mannered dog at home. Clear rules, consistent training, and understanding how your dog thinks — that's what creates lasting change.",
       "quoteAuthor": "- Yakir Lavi"
     },
+    "experience": {
+      "title": "International Training & Seminars",
+      "subtitle": "Continuing education — from companion dogs to working dogs and IGP protection",
+      "items": [
+        {
+          "year": "Before 2017",
+          "location": "Professional Training",
+          "title": "Companion & House Dog Training",
+          "description": "Before my international training in the Czech Republic, I completed professional education focused on companion dogs: solving behavioral problems, the theory and psychology of dogs, and foundational obedience training. This built the base for everything that followed — understanding how dogs think, learn, and live alongside their families."
+        },
+        {
+          "year": "2017",
+          "location": "Czech Republic",
+          "title": "Working Dog Immersion Program",
+          "description": "In 2017, I spent a full month in the Czech Republic in an intensive program dedicated to working dogs. It was a deep immersion in understanding this type of dog — how to raise, train, and work with them from puppyhood through maturity — and it strengthened the professional foundation I still draw on every day."
+        },
+        {
+          "year": "July 2026",
+          "location": "Helper Seminar",
+          "title": "IGP Protection — The Helper's Perspective",
+          "description": "In July 2026, I completed a helper seminar focused on IGP protection work from the helper's side. I expanded my knowledge of how to build strong, controlled protection phases with dogs, proper sleeve presentation and grip techniques, and a range of training approaches used in professional protection work."
+        }
+      ]
+    },
     "certifications": {
-      "title": "Competition Achievements",
-      "subtitle": "Proven results at the highest levels of IGP competition",
+      "title": "IGP Competition Achievements",
+      "subtitle": "Proven results at national and international IGP trials",
       "items": [
         {
           "title": "2nd Place Israel National Championship"
@@ -91,31 +127,38 @@
     },
     "philosophy": {
       "title": "My Training Philosophy",
-      "subtitle": "The principles that guide every training session",
+      "subtitle": "How I approach companion and house dog training",
       "points": [
         {
           "title": "Classical Training",
-          "description": "Time-tested training methods that establish clear boundaries, reliable obedience, and strong working relationships between handler and dog."
+          "description": "Time-tested methods that establish clear boundaries, reliable obedience, and a strong bond between you and your dog at home."
         },
         {
-          "title": "Structure & Discipline",
-          "description": "Dogs thrive with clear rules and consistent expectations. Through structured training, dogs develop confidence, focus, and dependable behavior."
+          "title": "Structure & Consistency",
+          "description": "Dogs thrive with clear rules and predictable routines. Structured training builds confidence, focus, and dependable behavior in everyday situations."
         },
         {
-          "title": "IGP Sport Excellence",
-          "description": "Specializing in tracking, obedience, and protection work. Competition-level training that brings out the best in working dogs and sport dogs."
+          "title": "Behavior & Psychology",
+          "description": "Understanding why your dog behaves the way it does is key to fixing problems. I address the root cause — not just the symptoms — for lasting results."
         }
       ]
     },
     "approach": {
-      "title": "What Makes My Approach Different?",
+      "title": "What Makes My House Dog Training Different?",
       "points": [
-        "<strong>Classical Training Foundation:</strong> Time-tested methods that create reliable, confident dogs with clear boundaries and expectations.",
-        "<strong>IGP Sport Expertise:</strong> Specialized training in tracking, obedience, and protection work for sport dogs and working dogs.",
-        "<strong>Competition Experience:</strong> Proven success at national and international levels - I know what it takes to compete and win.",
-        "<strong>Handler Training:</strong> I teach you to become an effective handler - clear communication and proper technique are essential.",
-        "<strong>Results-Oriented:</strong> Whether for family life or competition, I focus on measurable progress and reliable performance.",
-        "<strong>Structured Programs:</strong> Progressive training plans that build skills systematically, from foundation to advanced work."
+        "<strong>Practical daily skills:</strong> Sit, stay, recall, leash walking, and manners that work at home, on walks, and with guests.",
+        "<strong>Behavior solutions:</strong> Reactivity, jumping, pulling, anxiety, and other common challenges handled with structure and clear leadership.",
+        "<strong>You learn to train:</strong> I coach you — not just your dog — so progress continues between sessions and becomes part of your routine."
+      ]
+    },
+    "igpSport": {
+      "title": "IGP Sport Training",
+      "subtitle": "Advanced programs for handlers pursuing competition",
+      "intro": "IGP (Internationale Gebrauchshunde Prüfung) is a demanding sport testing tracking, obedience, and protection. If you and your dog are ready for this level, I bring 8 years of specialized experience and proven competition results.",
+      "points": [
+        "<strong>IGP sport expertise:</strong> Specialized training in tracking, obedience, and protection for sport and working dogs.",
+        "<strong>Competition experience:</strong> National and international trial experience — including 2nd place Israel National Championship 2023.",
+        "<strong>Structured progression:</strong> Systematic programs from foundation work to trial-ready performance."
       ]
     },
     "video": {
@@ -142,7 +185,15 @@
     "hero": {
       "title": "Training",
       "titleHighlight": " Services",
-      "subtitle": "Comprehensive dog training programs designed to meet your specific needs and goals"
+      "subtitle": "Programs for companion and house dogs — plus advanced IGP sport training for competition handlers"
+    },
+    "houseSection": {
+      "title": "House & Companion Dog Training",
+      "subtitle": "Our most popular programs for everyday life with your dog"
+    },
+    "igpSection": {
+      "title": "IGP Sport Training",
+      "subtitle": "Advanced programs for handlers and dogs preparing for competition"
     },
     "items": {
       "igp": {
@@ -238,7 +289,7 @@
       "subtitle": "Simple steps to transform your dog",
       "steps": {
         "1": {
-          "title": "Free Consultation",
+          "title": "Consultation",
           "description": "We discuss your goals and assess your dog's needs"
         },
         "2": {
@@ -257,8 +308,8 @@
     },
     "cta": {
       "title": "Not Sure Which Service Is Right?",
-      "subtitle": "Book a free consultation and we'll find the perfect program for your dog!",
-      "button": "Schedule Free Consultation"
+      "subtitle": "Book a consultation and we'll find the perfect program for your dog!",
+      "button": "Schedule Consultation"
     }
   },
   "contact": {
@@ -276,8 +327,8 @@
       "locationValue": "Herzliya, Israel"
     },
     "form": {
-      "title": "Book a Free Consultation",
-      "subtitle": "Fill out the form below and I'll get back to you within 24 hours to schedule your free consultation!",
+      "title": "Book a Consultation",
+      "subtitle": "Fill out the form below and I'll get back to you within 24 hours to schedule your consultation!",
       "yourInfo": "Your Information",
       "aboutDog": "About Your Dog",
       "trainingDetails": "Training Details",
@@ -498,7 +549,7 @@
     }
   },
   "footer": {
-    "description": "Professional dog training using classical methods. IGP sport specialist with national and international competition experience.",
+    "description": "Professional house and companion dog training using classical methods. Advanced IGP sport programs available for competition handlers.",
     "quickLinks": "Quick Links",
     "servicesTitle": "Services",
     "contact": "Contact",
@@ -513,8 +564,8 @@
       "subtitle": "Read what our happy clients and their furry friends have to say about their training experience"
     },
     "stats": {
-      "israelNational": "Israel National 2023",
-      "yearsIGP": "Years IGP Training",
+      "behaviorPrograms": "Behavior Programs",
+      "privateSessions": "Private Sessions",
       "yearsExperience": "Years Experience",
       "dogsTrained": "Dogs Trained"
     },
