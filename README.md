@@ -347,7 +347,11 @@ Replace **[Your City]** with your actual location:
 
 ## 🚢 Deployment Options
 
-### Recommended Hosting (Free/Cheap)
+### Production: Netlify + LiveDNS (`yakirikko.co.il`)
+
+See **[DEPLOY.md](DEPLOY.md)** for the full checklist: Netlify site, Gmail env vars, custom domain, and LiveDNS DNS records.
+
+### Other hosting (Free/Cheap)
 1. **Netlify** (Recommended) - Free, automatic deployments
 2. **Vercel** - Free, great for React
 3. **GitHub Pages** - Free, simple
@@ -357,7 +361,7 @@ Replace **[Your City]** with your actual location:
 1. Push code to GitHub
 2. Connect GitHub to Netlify
 3. Deploy automatically on push
-4. Add custom domain
+4. Add custom domain (see DEPLOY.md for LiveDNS)
 
 ## 📞 Support & Maintenance
 
