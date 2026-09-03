@@ -94,21 +94,6 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
-              {/* Floating badge */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4"
-              >
-                <div className="flex items-center gap-3">
-                  <FaStar className="text-yellow-400 text-2xl" />
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">5.0</div>
-                    <div className="text-xs text-gray-600">{t('home.hero.reviewsLabel')}</div>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>
