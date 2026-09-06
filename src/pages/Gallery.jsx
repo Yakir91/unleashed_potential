@@ -195,43 +195,6 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Upload Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h2 className="section-title">{t('gallery.upload.title')}</h2>
-            <p className="section-subtitle mb-8">
-              {t('gallery.upload.subtitle')}
-            </p>
-            
-            <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-12 shadow-lg">
-              <FaPaw className="text-6xl text-primary-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('gallery.upload.sectionTitle')}</h3>
-              <div className="text-start max-w-2xl mx-auto space-y-3 text-gray-700">
-                <p>{t('gallery.upload.tips.1')}</p>
-                <p>{t('gallery.upload.tips.2')}</p>
-                <p>{t('gallery.upload.tips.3')}</p>
-                <p>{t('gallery.upload.tips.4')}</p>
-                <p>{t('gallery.upload.tips.5')}</p>
-              </div>
-              <div className="mt-8">
-                <div className="inline-block bg-white px-8 py-4 rounded-full shadow-lg">
-                  <p className="text-gray-700">
-                    <strong>{t('gallery.upload.proTip')}</strong> {t('gallery.upload.proTipText')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
