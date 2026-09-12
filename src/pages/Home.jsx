@@ -29,7 +29,7 @@ export default function Home() {
     t('home.whyChoose.benefits.6'),
   ]
 
-  const youtubeChannelUrl = 'https://www.youtube.com/@lavios3022'
+  const youtubeChannelUrl = 'https://www.youtube.com/@YakiRikko'
   const youtubeEmbedUrl = 'https://www.youtube.com/embed/ryEzTH4bGIM'
 
   return (

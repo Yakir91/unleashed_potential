@@ -5,6 +5,7 @@
     "services": "Services",
     "testimonials": "Testimonials",
     "gallery": "Gallery",
+    "foundation": "Foundation",
     "contact": "Contact",
     "bookSession": "Book a Session"
   },
@@ -546,6 +547,29 @@
       "title": "Want Your Dog Featured Here?",
       "subtitle": "Join our training programs and become part of our success story gallery!",
       "button": "Start Training Today"
+    }
+  },
+  "foundation": {
+    "hero": {
+      "badge": "Video Series",
+      "title": "The Foundation of Dog Training",
+      "subtitle": "Short lessons explaining core exercises and everyday behaviors — so you understand what to train, why it matters, and how to practice at home."
+    },
+    "episodes": {
+      "title": "Episodes",
+      "subtitle": "New lessons will be added here as the series grows",
+      "episodeLabel": "Episode {{number}}",
+      "items": {
+        "sit": {
+          "title": "Sit",
+          "description": "Learn the foundations of teaching a clear, reliable sit — one of the first building blocks of good manners and communication with your dog."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to practice with guidance?",
+      "subtitle": "Book a consultation and we'll build these foundations into a plan for your dog.",
+      "button": "Book a Consultation"
     }
   },
   "footer": {

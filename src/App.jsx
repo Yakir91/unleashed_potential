@@ -7,6 +7,7 @@ import Services from './pages/Services'
 import Testimonials from './pages/Testimonials'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+import Foundation from './pages/Foundation'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/foundation" element={<Foundation />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

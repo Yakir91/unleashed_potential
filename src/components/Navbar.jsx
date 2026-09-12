@@ -16,6 +16,7 @@ export default function Navbar() {
     { name: t('nav.services'), path: '/services' },
     { name: t('nav.testimonials'), path: '/testimonials' },
     { name: t('nav.gallery'), path: '/gallery' },
+    { name: t('nav.foundation'), path: '/foundation' },
     { name: t('nav.contact'), path: '/contact' },
   ]
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaPaw, FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaPaw, FaFacebook, FaInstagram, FaYoutube, FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
@@ -40,6 +40,15 @@ export default function Footer() {
                 <FaInstagram size={20} />
               </a>
               <a
+                href="https://www.youtube.com/@YakiRikko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-400 hover:text-primary-500 hover:bg-gray-700 transition-colors"
+                aria-label="YouTube"
+              >
+                <FaYoutube size={20} />
+              </a>
+              <a
                 href="https://wa.me/972525664414"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -73,6 +82,11 @@ export default function Footer() {
               <li>
                 <Link to="/gallery" className="hover:text-primary-500 transition-colors">
                   {t('nav.gallery')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/foundation" className="hover:text-primary-500 transition-colors">
+                  {t('nav.foundation')}
                 </Link>
               </li>
             </ul>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagram, FaPaperPlane, FaClock, FaPaw } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagram, FaYoutube, FaPaperPlane, FaClock, FaPaw } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
@@ -126,6 +126,12 @@ export default function Contact() {
       name: 'Instagram',
       link: 'https://instagram.com/yakirlavi',
       color: 'hover:bg-pink-600',
+    },
+    {
+      icon: FaYoutube,
+      name: 'YouTube',
+      link: 'https://www.youtube.com/@YakiRikko',
+      color: 'hover:bg-red-600',
     },
   ]
 
