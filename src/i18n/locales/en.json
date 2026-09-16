@@ -563,6 +563,10 @@
         "sit": {
           "title": "Sit",
           "description": "Learn the foundations of teaching a clear, reliable sit — one of the first building blocks of good manners and communication with your dog."
+        },
+        "down": {
+          "title": "Down",
+          "description": "Teach a calm, reliable down — a key foundation for impulse control, settling, and everyday manners at home and outdoors."
         }
       }
     },
