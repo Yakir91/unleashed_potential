@@ -4,6 +4,8 @@ import { PhotoProvider, PhotoView } from 'react-photo-view'
 import 'react-photo-view/dist/react-photo-view.css'
 import { FaPaw, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
+import PageHero from '../components/PageHero'
+import PageCta from '../components/PageCta'
 
 export default function Gallery() {
   const { t } = useTranslation()
@@ -48,26 +50,14 @@ export default function Gallery() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-display">
-              {t('gallery.hero.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">{t('gallery.hero.titleHighlight')}</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('gallery.hero.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title={t('gallery.hero.title')}
+        titleHighlight={t('gallery.hero.titleHighlight')}
+        subtitle={t('gallery.hero.subtitle')}
+      />
 
       {/* Filter Section */}
-      <section className="py-12 bg-white sticky top-20 z-40 shadow-md">
+      <section className="py-10 bg-surface-elev/95 backdrop-blur sticky top-20 z-40 border-b border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {filters.map((filter) => (
@@ -76,10 +66,10 @@ export default function Gallery() {
                 onClick={() => setSelectedFilter(filter.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
+                className={`px-5 py-2.5 rounded-md font-semibold transition-all duration-300 flex items-center gap-2 ${
                   selectedFilter === filter.id
-                    ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-accent-600 text-white shadow-soft'
+                    : 'bg-surface text-ink-muted hover:bg-accent-50 hover:text-accent-800 border border-black/5'
                 }`}
               >
                 <filter.icon />
@@ -88,14 +78,14 @@ export default function Gallery() {
             ))}
           </div>
           
-          <div className="text-center mt-4 text-gray-600">
+          <div className="text-center mt-4 text-ink-muted">
             {t('gallery.showing')} <strong>{filteredItems.length}</strong> {filteredItems.length === 1 ? t('gallery.photo') : t('gallery.photos')}
           </div>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <PhotoProvider
             maskOpacity={0.9}
@@ -187,38 +177,20 @@ export default function Gallery() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-20"
             >
-              <FaPaw className="text-6xl text-gray-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-700 mb-2">{t('gallery.noPhotos.title')}</h3>
-              <p className="text-gray-600">{t('gallery.noPhotos.subtitle')}</p>
+              <FaPaw className="text-5xl text-accent-400 mx-auto mb-4" />
+              <h3 className="text-2xl font-semibold text-ink mb-2">{t('gallery.noPhotos.title')}</h3>
+              <p className="text-ink-muted">{t('gallery.noPhotos.subtitle')}</p>
             </motion.div>
           )}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
-              {t('gallery.cta.title')}
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              {t('gallery.cta.subtitle')}
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-white text-primary-600 px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              {t('gallery.cta.button')}
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <PageCta
+        title={t('gallery.cta.title')}
+        subtitle={t('gallery.cta.subtitle')}
+        button={t('gallery.cta.button')}
+      />
     </div>
   )
 }

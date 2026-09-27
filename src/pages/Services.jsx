@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaPaw, FaBone, FaTrophy, FaHeart, FaCheckCircle, FaStar, FaDog } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import PageHero from '../components/PageHero'
+import PageCta from '../components/PageCta'
 
 function ServiceCard({ service, expandedService, setExpandedService, t }) {
   return (
@@ -14,25 +16,25 @@ function ServiceCard({ service, expandedService, setExpandedService, t }) {
       className="relative"
     >
       <div
-        className={`card cursor-pointer transition-all duration-300 ${
-          expandedService === service.id ? 'scale-105 ring-4 ring-primary-300' : ''
+        className={`bg-white rounded-xl shadow-soft border border-black/5 overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lift hover:border-accent-300/60 ${
+          expandedService === service.id ? 'ring-2 ring-accent-400' : ''
         }`}
         onClick={() => setExpandedService(expandedService === service.id ? null : service.id)}
       >
         <div className={`bg-gradient-to-r ${service.color} p-6 text-white`}>
-          <service.icon className="text-5xl mb-4" />
-          <h3 className="text-2xl font-bold mb-1">{service.title}</h3>
-          <p className="text-white/90 text-sm">{service.subtitle}</p>
+          <service.icon className="text-4xl mb-4 text-white drop-shadow-sm" />
+          <h3 className="text-2xl font-semibold mb-1 text-white font-display">{service.title}</h3>
+          <p className="text-white/85 text-sm">{service.subtitle}</p>
         </div>
 
-        <div className="p-6">
-          <p className="text-gray-600 mb-4">{service.description}</p>
+        <div className="p-6 bg-white">
+          <p className="text-ink leading-relaxed mb-4">{service.description}</p>
 
-          <div className="flex justify-end items-center mb-4 pb-4 border-b border-gray-200">
+          <div className="flex justify-end items-center mb-4 pb-4 border-b border-black/5">
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-primary-500 font-semibold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-accent-700 font-semibold"
             >
               {expandedService === service.id ? t('services.showLess') + ' ▲' : t('services.learnMore') + ' ▼'}
             </motion.button>
@@ -47,13 +49,13 @@ function ServiceCard({ service, expandedService, setExpandedService, t }) {
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-4">
-                  <p className="text-gray-700 mb-4">{service.details}</p>
-                  <h4 className="font-semibold text-gray-900 mb-3">{t('services.whatsIncluded')}</h4>
+                  <p className="text-ink-muted mb-4 leading-relaxed">{service.details}</p>
+                  <h4 className="font-semibold text-ink mb-3">{t('services.whatsIncluded')}</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-2">
-                        <FaCheckCircle className="text-primary-500 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
+                      <li key={idx} className="flex items-start gap-2">
+                        <FaCheckCircle className="text-accent-600 mt-1 flex-shrink-0" />
+                        <span className="text-ink">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -82,7 +84,7 @@ export default function Services() {
       title: t('services.items.behavior.title'),
       subtitle: t('services.items.behavior.subtitle'),
       description: t('services.items.behavior.description'),
-      color: 'from-accent-400 to-accent-600',
+      color: 'from-accent-600 to-accent-800',
       features: [
         t('services.items.behavior.features.1'),
         t('services.items.behavior.features.2'),
@@ -100,7 +102,7 @@ export default function Services() {
       title: t('services.items.obedience.title'),
       subtitle: t('services.items.obedience.subtitle'),
       description: t('services.items.obedience.description'),
-      color: 'from-secondary-400 to-secondary-600',
+      color: 'from-primary-700 to-primary-900',
       features: [
         t('services.items.obedience.features.1'),
         t('services.items.obedience.features.2'),
@@ -117,7 +119,7 @@ export default function Services() {
       title: t('services.items.private.title'),
       subtitle: t('services.items.private.subtitle'),
       description: t('services.items.private.description'),
-      color: 'from-accent-500 to-primary-500',
+      color: 'from-accent-700 to-primary-800',
       features: [
         t('services.items.private.features.1'),
         t('services.items.private.features.2'),
@@ -138,7 +140,7 @@ export default function Services() {
       title: t('services.items.igp.title'),
       subtitle: t('services.items.igp.subtitle'),
       description: t('services.items.igp.description'),
-      color: 'from-primary-500 to-secondary-500',
+      color: 'from-primary-800 to-accent-800',
       features: [
         t('services.items.igp.features.1'),
         t('services.items.igp.features.2'),
@@ -155,7 +157,7 @@ export default function Services() {
       title: t('services.items.foundation.title'),
       subtitle: t('services.items.foundation.subtitle'),
       description: t('services.items.foundation.description'),
-      color: 'from-primary-400 to-primary-600',
+      color: 'from-primary-700 to-accent-700',
       features: [
         t('services.items.foundation.features.1'),
         t('services.items.foundation.features.2'),
@@ -173,7 +175,7 @@ export default function Services() {
       title: t('services.items.tracking.title'),
       subtitle: t('services.items.tracking.subtitle'),
       description: t('services.items.tracking.description'),
-      color: 'from-secondary-500 to-accent-500',
+      color: 'from-secondary-800 to-accent-700',
       features: [
         t('services.items.tracking.features.1'),
         t('services.items.tracking.features.2'),
@@ -186,27 +188,14 @@ export default function Services() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-display">
-              {t('services.hero.title')}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">
-                {t('services.hero.titleHighlight')}
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('services.hero.subtitle')}</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title={t('services.hero.title')}
+        titleHighlight={t('services.hero.titleHighlight')}
+        subtitle={t('services.hero.subtitle')}
+      />
 
       {/* House Dog Services */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface-elev">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -234,7 +223,7 @@ export default function Services() {
       </section>
 
       {/* IGP Sport Services */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+      <section className="py-20 bg-gradient-to-br from-surface-dark to-primary-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -243,8 +232,8 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-white mb-4 font-display">{t('services.igpSection.title')}</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t('services.igpSection.subtitle')}</p>
+            <h2 className="text-4xl font-semibold text-white mb-4 font-display">{t('services.igpSection.title')}</h2>
+            <p className="text-xl text-white/65 max-w-3xl mx-auto">{t('services.igpSection.subtitle')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -262,7 +251,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface-elev">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -290,11 +279,11 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-800 rounded-md text-accent-300 text-xl font-semibold mb-4 shadow-soft">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-semibold text-ink mb-2">{item.title}</h3>
+                <p className="text-ink-muted">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -302,25 +291,11 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">{t('services.cta.title')}</h2>
-            <p className="text-xl text-white/90 mb-8">{t('services.cta.subtitle')}</p>
-            <Link
-              to="/contact"
-              className="inline-block bg-white text-primary-600 px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              {t('services.cta.button')}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <PageCta
+        title={t('services.cta.title')}
+        subtitle={t('services.cta.subtitle')}
+        button={t('services.cta.button')}
+      />
     </div>
   )
 }

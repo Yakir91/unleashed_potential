@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagram, FaYoutube, FaPaperPlane, FaClock, FaPaw } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
+import PageHero from '../components/PageHero'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -83,28 +84,28 @@ export default function Contact() {
       title: t('contact.info.phone'),
       content: '052-566-4414',
       link: 'tel:0525664414',
-      color: 'from-primary-500 to-primary-600',
+      color: 'from-primary-800 to-primary-900',
     },
     {
       icon: FaEnvelope,
       title: t('contact.info.email'),
       content: 'yakirikko1@gmail.com',
       link: 'mailto:yakirikko1@gmail.com',
-      color: 'from-secondary-500 to-secondary-600',
+      color: 'from-accent-600 to-accent-800',
     },
     {
       icon: FaMapMarkerAlt,
       title: t('contact.info.location'),
       content: t('contact.info.locationValue'),
       link: '#map',
-      color: 'from-accent-500 to-accent-600',
+      color: 'from-primary-700 to-accent-700',
     },
     {
       icon: FaClock,
       title: t('contact.info.hours'),
       content: t('contact.info.hoursText'),
       link: null,
-      color: 'from-primary-600 to-secondary-600',
+      color: 'from-secondary-800 to-accent-800',
     },
   ]
 
@@ -138,26 +139,14 @@ export default function Contact() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-display">
-              {t('contact.hero.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">{t('contact.hero.titleHighlight')}</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('contact.hero.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title={t('contact.hero.title')}
+        titleHighlight={t('contact.hero.titleHighlight')}
+        subtitle={t('contact.hero.subtitle')}
+      />
 
       {/* Contact Cards */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface-elev">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
@@ -175,8 +164,8 @@ export default function Contact() {
                 <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${info.color} rounded-full mb-4 shadow-lg`}>
                   <info.icon className="text-2xl text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
-                <p className="text-gray-600 whitespace-pre-line">{info.content}</p>
+                <h3 className="text-lg font-semibold text-ink mb-2">{info.title}</h3>
+                <p className="text-ink-muted whitespace-pre-line">{info.content}</p>
               </motion.a>
             ))}
           </div>
@@ -184,7 +173,7 @@ export default function Contact() {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Booking Form */}
@@ -194,14 +183,14 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 font-display">
+              <h2 className="text-4xl font-semibold text-ink mb-6 font-display">
                 {t('contact.form.title')}
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-ink-muted mb-8">
                 {t('contact.form.subtitle')}
               </p>
 
-              <div id="contact-form-feedback" className="bg-white rounded-3xl shadow-2xl p-8">
+              <div id="contact-form-feedback" className="bg-surface-elev rounded-xl shadow-soft border border-black/5 p-8">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -210,11 +199,11 @@ export default function Contact() {
                     role="status"
                     aria-live="polite"
                   >
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-500 rounded-full mb-6">
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-accent-600 rounded-md mb-6">
                       <FaPaperPlane className="text-4xl text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('contact.form.thankYou')}</h3>
-                    <p className="text-xl text-gray-600 mb-8">
+                    <h3 className="text-3xl font-semibold text-ink mb-4">{t('contact.form.thankYou')}</h3>
+                    <p className="text-xl text-ink-muted mb-8">
                       {t('contact.form.thankYouMessage')}
                     </p>
                     <div className="mx-auto mb-8 max-w-md rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-800">
@@ -233,7 +222,7 @@ export default function Contact() {
                     {/* Owner Information */}
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm">1</span>
+                        <span className="inline-flex items-center justify-center w-8 h-8 bg-accent-600 text-white rounded-md text-sm">1</span>
                         {t('contact.form.yourInfo')}
                       </h3>
                       <div className="space-y-4">
@@ -248,7 +237,7 @@ export default function Contact() {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                             placeholder={t('contact.form.placeholders.fullName')}
                           />
                         </div>
@@ -265,7 +254,7 @@ export default function Contact() {
                               value={formData.email}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                               placeholder={t('contact.form.placeholders.email')}
                             />
                           </div>
@@ -281,7 +270,7 @@ export default function Contact() {
                               value={formData.phone}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                               placeholder={t('contact.form.placeholders.phone')}
                             />
                           </div>
@@ -292,7 +281,7 @@ export default function Contact() {
                     {/* Dog Information */}
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm">2</span>
+                        <span className="inline-flex items-center justify-center w-8 h-8 bg-accent-600 text-white rounded-md text-sm">2</span>
                         {t('contact.form.aboutDog')}
                       </h3>
                       <div className="space-y-4">
@@ -308,7 +297,7 @@ export default function Contact() {
                               value={formData.dogName}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                               placeholder={t('contact.form.placeholders.dogName')}
                             />
                           </div>
@@ -324,7 +313,7 @@ export default function Contact() {
                               value={formData.dogAge}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                               placeholder={t('contact.form.placeholders.age')}
                             />
                           </div>
@@ -340,7 +329,7 @@ export default function Contact() {
                               value={formData.dogBreed}
                               onChange={handleChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                               placeholder={t('contact.form.placeholders.breed')}
                             />
                           </div>
@@ -351,7 +340,7 @@ export default function Contact() {
                     {/* Training Information */}
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-500 text-white rounded-full text-sm">3</span>
+                        <span className="inline-flex items-center justify-center w-8 h-8 bg-accent-600 text-white rounded-md text-sm">3</span>
                         {t('contact.form.trainingDetails')}
                       </h3>
                       <div className="space-y-4">
@@ -365,7 +354,7 @@ export default function Contact() {
                             value={formData.trainingType}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                           >
                             <option value="">{t('contact.form.selectService')}</option>
                             <option value="puppy">{t('contact.form.serviceOptions.puppy')}</option>
@@ -389,7 +378,7 @@ export default function Contact() {
                               name="preferredDate"
                               value={formData.preferredDate}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                             />
                           </div>
 
@@ -402,7 +391,7 @@ export default function Contact() {
                               name="preferredTime"
                               value={formData.preferredTime}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors"
                             >
                               <option value="">{t('contact.form.selectTime')}</option>
                               <option value="morning">{t('contact.form.morning')}</option>
@@ -423,7 +412,7 @@ export default function Contact() {
                             value={formData.message}
                             onChange={handleChange}
                             rows="4"
-                            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors resize-none"
+                            className="w-full px-4 py-3 rounded-md border border-black/10 focus:border-accent-500 focus:outline-none transition-colors resize-none"
                             placeholder={t('contact.form.additionalPlaceholder')}
                           />
                         </div>
@@ -526,7 +515,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface-elev">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -564,7 +553,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6"
+                className="bg-accent-50 border border-accent-100 rounded-xl p-6"
               >
                 <h3 className="font-semibold text-gray-900 text-lg mb-2 flex items-center gap-2">
                   <FaPaw className="text-primary-500 shrink-0" />

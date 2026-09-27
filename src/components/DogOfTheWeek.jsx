@@ -6,7 +6,7 @@ export default function DogOfTheWeek() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-20 bg-gradient-to-br from-accent-50 to-primary-50">
+    <section className="py-20 bg-accent-50/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,7 +59,7 @@ export default function DogOfTheWeek() {
                   {t('dogOfTheWeek.story')}
                 </p>
 
-                <div className="bg-primary-50 rounded-xl p-4 border-l-4 border-primary-500">
+                <div className="bg-primary-50 rounded-xl p-4 border-l-4 border-accent-500">
                   <p className="text-gray-700 italic">
                     {t('dogOfTheWeek.quote')}
                   </p>

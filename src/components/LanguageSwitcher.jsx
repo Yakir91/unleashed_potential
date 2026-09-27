@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
 
 const LanguageSwitcher = ({ mobile = false }) => {
   const { i18n } = useTranslation()
@@ -10,32 +9,28 @@ const LanguageSwitcher = ({ mobile = false }) => {
   }
 
   const isHebrew = i18n.language === 'he'
+  const label = isHebrew ? 'EN' : 'עב'
 
   if (mobile) {
     return (
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+      <button
         onClick={toggleLanguage}
-        className="w-full text-left px-4 py-3 text-gray-800 hover:bg-primary-50 hover:text-primary-500 transition-colors font-medium"
+        className="w-full text-start px-2 py-3 text-ink-muted hover:text-accent-700 transition-colors font-medium border border-black/10 rounded-md hover:border-accent-300"
       >
-        {isHebrew ? 'English' : 'עברית'}
-      </motion.button>
+        {isHebrew ? 'Switch to English' : 'עברית'}
+      </button>
     )
   }
 
   return (
-    <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-500 text-white font-semibold hover:bg-primary-600 transition-colors shadow-md"
+      className="flex items-center justify-center min-w-[2.75rem] h-9 px-3 rounded-md border border-current/20 text-sm font-semibold tracking-wide hover:bg-accent-500/15 hover:border-accent-400 hover:text-accent-700 transition-colors"
+      aria-label="Switch language"
     >
-      <span className="text-lg">{isHebrew ? '🇬🇧' : '🇮🇱'}</span>
-      <span>{isHebrew ? 'EN' : 'עב'}</span>
-    </motion.button>
+      {label}
+    </button>
   )
 }
 
 export default LanguageSwitcher
-

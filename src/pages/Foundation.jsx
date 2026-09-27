@@ -1,19 +1,11 @@
 import { motion } from 'framer-motion'
-import { FaPlay, FaPaw } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import PageHero from '../components/PageHero'
+import PageCta from '../components/PageCta'
 
 const EPISODES = [
-  {
-    id: 'sit',
-    youtubeId: 'kgewmWrQjRo',
-    episode: 1,
-  },
-  {
-    id: 'down',
-    youtubeId: '0HhJaVjLOGQ',
-    episode: 2,
-  },
+  { id: 'sit', youtubeId: 'kgewmWrQjRo', episode: 1 },
+  { id: 'down', youtubeId: '0HhJaVjLOGQ', episode: 2 },
 ]
 
 export default function Foundation() {
@@ -21,31 +13,13 @@ export default function Foundation() {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 bg-white/80 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-sm">
-              <FaPlay className="text-primary-500" />
-              {t('foundation.hero.badge')}
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-display">
-              {t('foundation.hero.title')}
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('foundation.hero.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={t('foundation.hero.badge')}
+        title={t('foundation.hero.title')}
+        subtitle={t('foundation.hero.subtitle')}
+      />
 
-      {/* Episodes */}
-      <section className="py-20 bg-white">
+      <section className="py-20 md:py-24 bg-surface-elev">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -68,7 +42,7 @@ export default function Foundation() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="w-full max-w-sm"
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-[9/16]">
+                <div className="relative rounded-xl overflow-hidden shadow-lift bg-surface-dark aspect-[9/16]">
                   <iframe
                     src={`https://www.youtube.com/embed/${episode.youtubeId}`}
                     title={t(`foundation.episodes.items.${episode.id}.title`)}
@@ -80,13 +54,13 @@ export default function Foundation() {
                   />
                 </div>
                 <div className="mt-5 text-center px-2">
-                  <p className="text-sm font-semibold text-primary-600 mb-1">
+                  <p className="text-sm font-semibold text-accent-700 mb-1">
                     {t('foundation.episodes.episodeLabel', { number: episode.episode })}
                   </p>
-                  <h3 className="text-xl font-bold text-gray-900 font-display mb-2">
+                  <h3 className="text-xl font-semibold text-ink font-display mb-2">
                     {t(`foundation.episodes.items.${episode.id}.title`)}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-ink-muted leading-relaxed">
                     {t(`foundation.episodes.items.${episode.id}.description`)}
                   </p>
                 </div>
@@ -96,29 +70,11 @@ export default function Foundation() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <FaPaw className="text-5xl text-white/90 mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
-              {t('foundation.cta.title')}
-            </h2>
-            <p className="text-xl text-white/90 mb-8">{t('foundation.cta.subtitle')}</p>
-            <Link
-              to="/contact"
-              className="inline-block bg-white text-primary-600 px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              {t('foundation.cta.button')}
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <PageCta
+        title={t('foundation.cta.title')}
+        subtitle={t('foundation.cta.subtitle')}
+        button={t('foundation.cta.button')}
+      />
     </div>
   )
 }

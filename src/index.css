@@ -4,64 +4,78 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 font-sans;
+    @apply bg-surface text-ink font-sans antialiased;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    @apply font-display tracking-tight text-ink;
+  }
+
+  ::selection {
+    @apply bg-accent-200 text-ink;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out;
+    @apply inline-flex items-center justify-center bg-primary-700 text-white px-8 py-3.5 rounded-md font-semibold tracking-wide shadow-soft hover:bg-accent-600 hover:-translate-y-0.5 hover:shadow-lift transition-all duration-300 ease-out;
   }
-  
+
   .btn-secondary {
-    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out;
+    @apply inline-flex items-center justify-center bg-secondary-800 text-white px-8 py-3.5 rounded-md font-semibold tracking-wide shadow-soft hover:bg-accent-700 hover:-translate-y-0.5 hover:shadow-lift transition-all duration-300 ease-out;
   }
-  
+
   .btn-outline {
-    @apply border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300 ease-in-out;
+    @apply inline-flex items-center justify-center border border-primary-700/40 text-primary-800 bg-transparent px-8 py-3.5 rounded-md font-semibold tracking-wide hover:bg-accent-500 hover:text-white hover:border-accent-500 transition-all duration-300 ease-out;
   }
-  
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center border border-white/40 text-white px-8 py-3.5 rounded-md font-semibold tracking-wide hover:bg-accent-500 hover:border-accent-500 hover:text-white transition-all duration-300 ease-out;
+  }
+
   .card {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden;
+    @apply bg-surface-elev rounded-xl shadow-soft hover:shadow-lift hover:border-accent-300/60 transition-all duration-500 overflow-hidden border border-black/5;
   }
-  
+
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-gray-900 mb-4;
+    @apply text-3xl md:text-5xl font-display font-semibold text-ink mb-4;
   }
-  
+
   .section-subtitle {
-    @apply text-xl text-gray-600 mb-12;
+    @apply text-lg md:text-xl text-ink-muted mb-12 max-w-2xl mx-auto leading-relaxed;
+  }
+
+  .eyebrow {
+    @apply text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-accent-600;
+  }
+
+  .link-accent {
+    @apply text-ink-muted hover:text-accent-600 transition-colors duration-300;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #eef0ee;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #22c55e;
-  border-radius: 5px;
+  background: #4a7460;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #16a34a;
+  background: #905f3c;
 }
 
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* RTL Support */
 [dir="rtl"] {
   direction: rtl;
 }
@@ -70,7 +84,6 @@ html {
   --tw-space-x-reverse: 1;
 }
 
-/* Ensure proper text alignment in RTL */
 [dir="rtl"] body {
   text-align: right;
 }
@@ -79,7 +92,6 @@ html {
   text-align: left;
 }
 
-/* RTL-friendly transitions */
 [dir="rtl"] .transition-transform {
   transform-origin: right center;
 }
@@ -87,4 +99,3 @@ html {
 [dir="ltr"] .transition-transform {
   transform-origin: left center;
 }
-

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaCheckCircle, FaPaw, FaLightbulb } from 'react-icons/fa'
+import { FaCheckCircle, FaLightbulb } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 export default function TrainingQuiz() {
@@ -14,30 +14,30 @@ export default function TrainingQuiz() {
       id: 1,
       question: t('quiz.questions.1.question'),
       options: [
-        { value: 'puppy', label: t('quiz.questions.1.options.puppy'), icon: '🐶' },
-        { value: 'young', label: t('quiz.questions.1.options.young'), icon: '🐕' },
-        { value: 'adult', label: t('quiz.questions.1.options.adult'), icon: '🦮' },
-        { value: 'senior', label: t('quiz.questions.1.options.senior'), icon: '🐕‍🦺' },
+        { value: 'puppy', label: t('quiz.questions.1.options.puppy') },
+        { value: 'young', label: t('quiz.questions.1.options.young') },
+        { value: 'adult', label: t('quiz.questions.1.options.adult') },
+        { value: 'senior', label: t('quiz.questions.1.options.senior') },
       ],
     },
     {
       id: 2,
       question: t('quiz.questions.2.question'),
       options: [
-        { value: 'basic', label: t('quiz.questions.2.options.basic'), icon: '📝' },
-        { value: 'behavior', label: t('quiz.questions.2.options.behavior'), icon: '🔧' },
-        { value: 'advanced', label: t('quiz.questions.2.options.advanced'), icon: '🏆' },
-        { value: 'socialization', label: t('quiz.questions.2.options.socialization'), icon: '🤝' },
+        { value: 'basic', label: t('quiz.questions.2.options.basic') },
+        { value: 'behavior', label: t('quiz.questions.2.options.behavior') },
+        { value: 'advanced', label: t('quiz.questions.2.options.advanced') },
+        { value: 'socialization', label: t('quiz.questions.2.options.socialization') },
       ],
     },
     {
       id: 3,
       question: t('quiz.questions.3.question'),
       options: [
-        { value: 'low', label: t('quiz.questions.3.options.low'), icon: '😌' },
-        { value: 'moderate', label: t('quiz.questions.3.options.moderate'), icon: '🙂' },
-        { value: 'high', label: t('quiz.questions.3.options.high'), icon: '⚡' },
-        { value: 'very-high', label: t('quiz.questions.3.options.very-high'), icon: '🚀' },
+        { value: 'low', label: t('quiz.questions.3.options.low') },
+        { value: 'moderate', label: t('quiz.questions.3.options.moderate') },
+        { value: 'high', label: t('quiz.questions.3.options.high') },
+        { value: 'very-high', label: t('quiz.questions.3.options.very-high') },
       ],
     },
   ]
@@ -47,13 +47,9 @@ export default function TrainingQuiz() {
     setAnswers(newAnswers)
 
     if (currentQuestion < questions.length - 1) {
-      setTimeout(() => {
-        setCurrentQuestion(currentQuestion + 1)
-      }, 300)
+      setTimeout(() => setCurrentQuestion(currentQuestion + 1), 300)
     } else {
-      setTimeout(() => {
-        setShowResults(true)
-      }, 300)
+      setTimeout(() => setShowResults(true), 300)
     }
   }
 
@@ -87,89 +83,78 @@ export default function TrainingQuiz() {
     setShowResults(false)
   }
 
-  // Progress reflects completed answers only (starts at 0% on the first question)
   const progressPercent = Math.round((currentQuestion / questions.length) * 100)
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 md:py-32 bg-surface">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <FaLightbulb className="text-accent-500 text-3xl" />
-          </div>
-          <h2 className="section-title">{t('quiz.title')}</h2>
-          <p className="section-subtitle">{t('quiz.subtitle')}</p>
+          <p className="eyebrow mb-4">{t('quiz.title')}</p>
+          <h2 className="section-title !mb-0">{t('quiz.subtitle')}</h2>
         </motion.div>
 
-        <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl shadow-2xl p-8 md:p-12">
+        <div className="bg-surface-elev rounded-xl shadow-soft border border-black/5 p-8 md:p-10">
           <AnimatePresence mode="wait">
             {!showResults ? (
               <motion.div
                 key={currentQuestion}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-ink-muted">
                       {t('quiz.questionOf', { current: currentQuestion + 1, total: questions.length })}
                     </span>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-ink-muted">
                       {t('quiz.percentComplete', { percent: progressPercent })}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-accent-100 h-1 rounded-full overflow-hidden">
                     <motion.div
-                      className="bg-gradient-to-r from-primary-500 to-secondary-500 h-3 rounded-full"
+                      className="bg-accent-600 h-1"
                       initial={{ width: 0 }}
                       animate={{ width: `${progressPercent}%` }}
-                      transition={{ duration: 0.5 }}
+                      transition={{ duration: 0.45 }}
                     />
                   </div>
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+                <h3 className="text-2xl md:text-3xl font-display font-semibold text-ink mb-8 text-center">
                   {questions[currentQuestion].question}
                 </h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {questions[currentQuestion].options.map((option) => (
                     <motion.button
                       key={option.value}
                       onClick={() => handleAnswer(option.value)}
-                      className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-left group"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      className="bg-surface p-5 rounded-lg border border-black/5 hover:border-accent-400 hover:bg-accent-50/70 transition-all duration-300 text-start"
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      <div className="flex items-center space-x-4">
-                        <div className="text-4xl">{option.icon}</div>
-                        <div className="flex-1">
-                          <div className="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                            {option.label}
-                          </div>
-                        </div>
-                      </div>
+                      <span className="text-base font-medium text-ink">{option.label}</span>
                     </motion.button>
                   ))}
                 </div>
               </motion.div>
             ) : (
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.4 }}
               >
                 <div className="text-center mb-8">
-                  <FaCheckCircle className="text-6xl text-primary-500 mx-auto mb-4" />
-                  <h3 className="text-3xl font-bold text-gray-900 mb-2 font-display">
+                  <FaCheckCircle className="text-4xl text-primary-600 mx-auto mb-4" />
+                  <h3 className="text-3xl font-display font-semibold text-ink">
                     {t('quiz.resultsTitle')}
                   </h3>
                 </div>
@@ -177,42 +162,31 @@ export default function TrainingQuiz() {
                 {(() => {
                   const rec = getRecommendation()
                   return (
-                    <div className="bg-white rounded-2xl p-8 shadow-xl">
-                      <div className="text-center mb-6">
-                        <h4 className="text-3xl font-bold text-gray-900 mb-2">{rec.title}</h4>
-                        <p className="text-primary-600 font-semibold text-lg">{rec.program}</p>
+                    <div>
+                      <div className="bg-primary-50 border border-primary-100 rounded-lg p-6 mb-6 text-center">
+                        <p className="eyebrow mb-2">{rec.program}</p>
+                        <h4 className="text-2xl font-display font-semibold text-ink mb-3">{rec.title}</h4>
+                        <p className="text-ink-muted leading-relaxed">{rec.description}</p>
                       </div>
 
-                      <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-                        {rec.description}
-                      </p>
+                      <h5 className="font-semibold text-ink mb-3 flex items-center gap-2">
+                        <FaLightbulb className="text-accent-500" />
+                        {t('quiz.tipsTitle')}
+                      </h5>
+                      <ul className="space-y-2 mb-8">
+                        {rec.tips.map((tip, index) => (
+                          <li key={index} className="flex items-start gap-3 text-ink-muted">
+                            <FaCheckCircle className="text-primary-600 mt-1 shrink-0 text-sm" />
+                            <span>{tip}</span>
+                          </li>
+                        ))}
+                      </ul>
 
-                      <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 mb-6">
-                        <h5 className="font-semibold text-gray-900 mb-4 flex items-center">
-                          <FaPaw className="text-primary-500 mr-2" />
-                          {t('quiz.tipsTitle')}
-                        </h5>
-                        <ul className="space-y-3">
-                          {rec.tips.map((tip, index) => (
-                            <li key={index} className="flex items-start space-x-3">
-                              <FaCheckCircle className="text-primary-500 mt-1 flex-shrink-0" />
-                              <span className="text-gray-700">{tip}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <button
-                          onClick={resetQuiz}
-                          className="flex-1 btn-outline"
-                        >
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <button onClick={resetQuiz} className="flex-1 btn-outline">
                           {t('quiz.takeAgain')}
                         </button>
-                        <a
-                          href="/contact"
-                          className="flex-1 btn-primary text-center"
-                        >
+                        <a href="/contact" className="flex-1 btn-primary text-center">
                           {t('quiz.bookSession')}
                         </a>
                       </div>

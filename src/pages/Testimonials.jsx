@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaStar, FaQuoteLeft, FaPaw, FaHeart, FaPaperPlane } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
+import PageHero from '../components/PageHero'
+import PageCta from '../components/PageCta'
 
 export default function Testimonials() {
   const { t } = useTranslation()
@@ -58,26 +60,11 @@ export default function Testimonials() {
 
   return (
     <div className="overflow-hidden">
-      <section className="relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-display">
-              {t('testimonials.hero.title')}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">
-                {t('testimonials.hero.titleHighlight')}
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('testimonials.hero.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title={t('testimonials.hero.title')}
+        titleHighlight={' ' + t('testimonials.hero.titleHighlight')}
+        subtitle={t('testimonials.hero.subtitle')}
+      />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,16 +83,16 @@ export default function Testimonials() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="text-5xl text-primary-500 mx-auto mb-4" />
-                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <stat.icon className="text-4xl text-accent-600 mx-auto mb-4" />
+                <div className="text-4xl font-display font-semibold text-ink mb-2">{stat.number}</div>
+                <div className="text-ink-muted">{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -129,7 +116,7 @@ export default function Testimonials() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="card p-6 hover:scale-105 transition-transform duration-300"
                 >
-                  <FaQuoteLeft className="text-3xl text-primary-300 mb-4" />
+                  <FaQuoteLeft className="text-3xl text-accent-400 mb-4" />
                   
                   <div className="mb-4">{renderStars(testimonial.rating)}</div>
                   
@@ -138,7 +125,7 @@ export default function Testimonials() {
                   </p>
                   
                   <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent-600 to-primary-800 rounded-full flex items-center justify-center text-white font-bold text-xl">
                       {testimonial.name.charAt(0)}
                     </div>
                     <div>
@@ -170,7 +157,7 @@ export default function Testimonials() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-accent-50 to-primary-50">
+      <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -190,7 +177,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-3xl shadow-2xl p-8 md:p-12"
+            className="bg-surface-elev rounded-xl shadow-soft border border-black/5 p-8 md:p-12"
           >
             {submitted ? (
               <motion.div
@@ -198,7 +185,7 @@ export default function Testimonials() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
               >
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-500 rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-600 rounded-md mb-6">
                   <FaPaperPlane className="text-4xl text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">{t('testimonials.form.thankYou')}</h3>
@@ -220,7 +207,7 @@ export default function Testimonials() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:outline-none transition-colors"
                       placeholder={t('testimonials.form.placeholders.name')}
                     />
                   </div>
@@ -236,7 +223,7 @@ export default function Testimonials() {
                       value={formData.dogName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:outline-none transition-colors"
                       placeholder={t('testimonials.form.placeholders.dogName')}
                     />
                   </div>
@@ -253,7 +240,7 @@ export default function Testimonials() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:outline-none transition-colors"
                     placeholder={t('testimonials.form.placeholders.email')}
                   />
                 </div>
@@ -276,7 +263,7 @@ export default function Testimonials() {
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:outline-none transition-colors resize-none"
                     placeholder={t('testimonials.form.placeholders.experience')}
                   />
                 </div>
@@ -300,29 +287,11 @@ export default function Testimonials() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
-              {t('testimonials.cta.title')}
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              {t('testimonials.cta.subtitle')}
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-white text-primary-600 px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              {t('testimonials.cta.button')}
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <PageCta
+        title={t('testimonials.cta.title')}
+        subtitle={t('testimonials.cta.subtitle')}
+        button={t('testimonials.cta.button')}
+      />
     </div>
   )
 }
