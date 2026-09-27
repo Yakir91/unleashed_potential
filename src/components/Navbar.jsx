@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaBars, FaTimes, FaPaw } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
 
@@ -27,14 +27,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse group">
-            <motion.div
-              animate={{ rotate: [0, -10, 10, -10, 0] }}
-              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
-            >
-              <FaPaw className="text-3xl text-primary-500 group-hover:text-primary-600 transition-colors" />
-            </motion.div>
-            <span className="text-2xl font-bold text-gray-900 font-display">
+          <Link to="/" className="flex items-center gap-3 shrink-0 group">
+            <img
+              src="/images/yakirikko-logo.png"
+              alt={t('brand')}
+              className="h-14 w-auto object-contain transition-opacity group-hover:opacity-80"
+            />
+            <span className="text-xl md:text-2xl font-bold text-gray-900 font-display whitespace-nowrap">
               {t('brand')}
             </span>
           </Link>
@@ -113,4 +112,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

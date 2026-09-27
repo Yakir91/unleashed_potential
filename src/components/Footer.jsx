@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaPaw, FaFacebook, FaInstagram, FaYoutube, FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
@@ -11,12 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <FaPaw className="text-2xl text-primary-500" />
-              <span className="text-xl font-bold text-white font-display">
+            <Link to="/" className="inline-flex items-center gap-3 mb-4">
+              <img
+                src="/images/yakirikko-logo.png"
+                alt={t('brand')}
+                className="h-16 w-auto object-contain brightness-0 invert"
+              />
+              <span className="text-xl font-bold text-white font-display whitespace-nowrap">
                 {t('brand')}
               </span>
-            </div>
+            </Link>
             <p className="text-gray-400 mb-4">
               {t('footer.description')}
             </p>
