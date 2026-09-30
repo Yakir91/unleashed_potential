@@ -6,6 +6,7 @@ import PageCta from '../components/PageCta'
 const EPISODES = [
   { id: 'sit', youtubeId: 'kgewmWrQjRo', episode: 1 },
   { id: 'down', youtubeId: '0HhJaVjLOGQ', episode: 2 },
+  { id: 'come', youtubeId: '9-K4Y_Dyf2Q', episode: 3 },
 ]
 
 export default function Foundation() {
